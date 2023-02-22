@@ -1,0 +1,177 @@
+global !p
+
+def insert_itm_command(snip):
+	output = ""
+	for line in snip.splitlines():
+		for i in range(0, len(line)):
+			if not line[i].isspace():
+				output += line[:i] + "\item " + line[i:]
+				output += '\n'
+				break
+	return output[:-1]
+
+def isMath():
+    return int(vim.eval('vimtex#syntax#in_mathzone()')) > 0
+
+endglobal
+
+
+#######################################################################
+#                         Template file heads                         #
+#######################################################################
+
+snippet head "general head"
+\documentclass{report}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+$0
+
+\end{document}
+endsnippet
+
+snippet hishead "history head"
+\usepackage{multicol}
+\usepackage{enumitem}   % Better lists
+\setlist{itemsep=1pt}
+endsnippet
+
+snippet ecshead "head for ecs"
+\usepackage{multicol}
+\usepackage{enumitem}   % Better lists
+\usepackage{minted}	% For code listing
+
+\setlist{itemsep=1pt}
+endsnippet
+
+snippet mathead "head for math"
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}   % Better lists
+$0
+endsnippet
+
+snippet dmathead "discrete math head"
+\usepackage{amsthm}
+\newtheorem{theorem}{Thm.}
+\newtheorem{claim}{Claim.}
+\newtheorem{axiom}{Axiom.}
+\newtheorem{lemma}{Lemma.}
+endsnippet
+
+snippet hrefhead "hyperref head"
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+	}
+
+\urlstyle{same}
+endsnippet
+
+snippet pckg "usepackage"
+\usepackage{$1}$0
+endsnippet
+
+snippet align "align math"
+\begin{align*}
+	$1
+\end{align*}
+$0
+endsnippet
+
+snippet bslash "backslash in text mode"
+\textbackslash $0
+endsnippet
+
+snippet -> "arrow in text mode"
+$\rightarrow$
+endsnippet
+
+# snippet ( "Close parentheses automatically" Ai
+# ($1)$0
+# endsnippet
+
+context "isMath()"
+snippet ^ "math mode exponent" Ai
+^{$1}$0
+endsnippet
+
+context "isMath()"
+snippet _ "math mode exponent" Ai
+_{$1}$0
+endsnippet
+
+snippet lpar "labeled paragraph"
+\paragraph{$1} \label{$1}
+$0
+endsnippet
+
+snippet txt "text in math mode" i
+\text{$1}$0
+endsnippet
+
+snippet $ "inline math" A
+\$${1:${VISUAL}}\$$0
+endsnippet
+
+snippet \[ "paragraph math"
+\[
+	$1
+\]
+$0
+endsnippet
+
+snippet mtil "minted inline code" i
+\mintinline{${1:python}}|$2|$0
+endsnippet
+
+snippet mted "minted paragrpah code"
+\begin{minted}{${1:python}}
+	$2
+\end{minted}
+$0
+endsnippet
+
+snippet itemize "itemized list"
+\begin{itemize}
+	`!p snip.rv = insert_itm_command(t[1])`
+	$0${1:${VISUAL}}
+\end{itemize}
+endsnippet
+
+snippet enumerate "enumerated list"
+\begin{enumerate}
+	`!p snip.rv = insert_itm_command(t[1])`
+	$0${1:${VISUAL}}
+\end{enumerate}
+endsnippet
+
+snippet m_ps "math power series" i
+\sum_{n=0}^{\infty} c_n(x-a)^n
+endsnippet
+
+#######################################################################
+#                           Logic Operators                           #
+#######################################################################
+context "isMath()"
+snippet not "swap not for logic equivalent in math mode" Ai
+\neg
+endsnippet
+
+context "isMath()"
+snippet and "swap and for logic equivalent in math mode" Ai
+\land
+endsnippet
+
+context "isMath()"
+snippet or "swap or for logic equivalent in math mode" Ai
+\lor
+endsnippet
+

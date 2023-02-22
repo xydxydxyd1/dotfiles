@@ -1,0 +1,82 @@
+####################
+#  Configurations  #
+####################
+
+export CLICOLOR=1
+export PATH=$PATH:/Users/admin/Library/Python/3.10/bin	# Add python bin directory to PATH
+
+
+##############################
+#  Shortcuts to Directories  #
+##############################
+
+alias snips='cd ~/.vim/plugged/vim-snippets/UltiSnips'	# Snippets library
+alias plans='cd ~/Documents/plans'			# All project planning documents
+
+# School
+alias school='cd ~/Documents/2023_ucdavis'
+alias his='cd ~/Documents/2023_ucdavis/HIS017B'
+alias ecs='cd ~/Documents/2023_ucdavis/ECS036B'
+alias ecs20='cd ~/Documents/2023_ucdavis/ECS020'
+
+#####################
+#  Custom Commands  #
+#####################
+
+# Basic command modifications
+alias ls='ls -G'	# Enable colorized directory list
+alias ll='ls -l'	# List directories, but loooong
+alias la='ls -a'	# List directories, but also the ~~secrets~~
+
+alias rm='rm -i'	# Always emable removal confirmation prompts
+
+# Run command in new terminal tab
+function runInNewTab() {  
+    osascript >/dev/null <<EOF
+    tell application "System Events"
+    tell process "Terminal" to keystroke "t" using command down
+        end tell
+    tell application "Terminal" to do script "$*" in front window
+EOF
+}
+alias vimt='runInNewTab vim'
+
+# Split screen commands
+sp_half(){
+	printf '\e[8;58;110t'
+	printf '\e[3;768;0t'
+}
+sp_full(){
+	printf '\e[8;58;220t'
+	printf '\e[3;108;0t'
+}
+
+# Quick compilation
+ecsgcc(){
+	gcc -g -Wall -Wextra -Werror $1 -o $2
+}
+simplegcc(){
+	gcc -g -Wall -Wextra $1 -o $2
+}
+
+# Accessing CSIF school computers
+csif(){
+	ssh xydxydxy@pc"${1:=32}".cs.ucdavis.edu
+}
+sftp_csif(){
+	sftp xydxydxy@pc"${1:=32}".cs.ucdavis.edu
+}
+
+# Misc.
+his_textbook(){
+	# Start taking history textbook notes with this one command!
+	his
+	open his_textbook.pdf -a Google\ Chrome
+	open -a Terminal
+	vimt 1_reconstruction.md
+}
+
+# Add help command for zsh
+autoload run-help
+HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
+alias help=run-help

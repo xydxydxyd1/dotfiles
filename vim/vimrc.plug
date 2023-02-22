@@ -1,0 +1,76 @@
+" File: vimrc.plug
+" Author: xydxydxyd1
+" Description: Plugins managed by vim-plug
+" Last Modified: January 07, 2023
+
+call plug#begin('~/.dotfiles/vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           Fugitive: git wrapper                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                         UltiSnips: snippet manager                         "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'sirver/ultisnips'
+
+"Core snippets for UltiSnip
+Plug 'honza/vim-snippets'
+
+"Set user for certain snippets
+let g:snips_author = "xydxydxyd1"
+let g:snips_email = "xydxydxyd1@email.com"
+
+"Ultisnips Configurations
+let g:UltiSnipsExpandTrigger = '<CR>'		"Tabs conflicts with YCM
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsEditSplit = "horizontal"
+let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"Incorporate vim-snippets
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       YouCompleteMe: Code completion                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'ycm-core/YouCompleteMe', {'do': './install.py --all'}
+let g:ycm_clangd_binary_path = '/usr/bin/clangd'
+let g:ycm_show_diagnostics_ui = 0		"Turns off diagnostic display
+"let g:ycm_global_ycm_extra_conf = '~/.vim'
+"let g:ycm_enable_semantic_highlighting=1	"Enable better syntax highlight
+"let g:ycm_enable_inlay_hints = 1		"Enable inlay hints
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       AsychronousLintEngine: linting                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YCM has diagnostic display, which do similar things
+"Plug 'dense-analysis/ale', {'on': []}
+"let g:ale_echo_cursor = 1		"Error messages show up below
+"let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       vim-autoformat: autoformatter                        "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" clang-format has easy vim integration, but it is too bothersome to config
+Plug 'vim-autoformat/vim-autoformat'
+""let g:formatterpath = ['/usr/local/bin/clang-format']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"             VimTeX: filetype and syntax plugin for LaTeX files             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'lervag/vimtex'
+if filereadable(expand("~/.vim/vimrc.plug.vimtex_config"))
+	source ~/.vim/vimrc.plug.vimtex_config
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                MarkdownPreview: preview plugin for markdown                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+if filereadable(expand("~/.vim/vimrc.plug.markdown_preview_config"))
+	source ~/.vim/vimrc.plug.vimtex_config
+endif
+
+call plug#end()

@@ -1,0 +1,29 @@
+set encoding=utf8	" Required for vimtex
+
+filetype on
+filetype plugin on
+filetype indent on
+
+syntax on
+set number
+set incsearch
+set ls=2
+set hlsearch
+
+" Use tabs for indentation with space
+set shiftwidth=4 smarttab
+set tabstop=8 softtabstop=0	" prevent confusion with tabs and space indents
+
+set backspace=indent,eol,start "set backspace so that it can delete newlines
+
+" Set delay for escape sequence
+set timeoutlen=1000
+set ttimeoutlen=5
+
+" Set fold method
+:command -nargs=1 Fdm setlocal foldmethod=<args>
+
+" Call the .vimrc.plug file
+if filereadable(expand("~/.dotfiles/vim/vimrc.plug"))
+	source ~/.dotfiles/vim/vimrc.plug
+endif
