@@ -1,10 +1,11 @@
+mydir="$HOME/.dotfiles/zsh"
+
 ####################
 #  Configurations  #
 ####################
 
 export CLICOLOR=1
 export PATH=$PATH:/Users/admin/Library/Python/3.10/bin	# Add python bin directory to PATH
-export CDPATH="$HOME/.bookmarks"
 
 set -o vi	# vi keybinds to shell
 
@@ -21,9 +22,9 @@ alias his='cd ~/Documents/2023_ucdavis/HIS017B'
 alias ecs='cd ~/Documents/2023_ucdavis/ECS036B'
 alias ecs20='cd ~/Documents/2023_ucdavis/ECS020'
 
-if [ -f $HOME/.dotfiles/zshrc.bookmark ]
+if [ -f $mydir/zshrc.bookmark ]
 then
-	source $HOME/.dotfiles/zshrc.bookmark
+	source $mydir/zshrc.bookmark
 fi
 
 #####################
@@ -41,8 +42,6 @@ alias g++='g++ -g -Wall'	# Always add all warnings
 
 alias python='python3'
 alias yabe='yabai -m'
-
-# alias zathura='zathura -p /usr/local/lib/zathura'	# Set zathura plugin path
 
 untar(){
 	tar -xvf $1
@@ -102,6 +101,3 @@ his_textbook(){
 autoload run-help
 HELPDIR=/usr/share/zsh/"${ZSH_VERSION}"/help
 alias help=run-help
-
-# Config Dbus for vimtex-zathura-macos
-export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"

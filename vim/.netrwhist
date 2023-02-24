@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/admin/Documents/2023_ucdavis/ecs36b/lec11/a.out.dSYM'
+let g:netrw_dirhist_2='/Users/admin/Documents/2023_ucdavis/ecs36b/lec2/a.out.dSYM'
+let g:netrw_dirhist_1='/Users/admin/Documents/2023_ucdavis/ecs36b/lec1/fractions'
+let g:netrw_dirhist_0='/Users/admin/Documents/2023_ucdavis/ecs36b/lec11/a.out.dSYM'
 let g:netrw_dirhist_9='/Users/admin/Documents/2023_ucdavis/ecs36b/lec1/fractions'
 let g:netrw_dirhist_8='/Users/admin/Documents/2023_ucdavis/ecs36b'
 let g:netrw_dirhist_7='/Users/admin/Documents/2023_ucdavis/ecs36b/lec1'
 let g:netrw_dirhist_6='/Users/admin/Documents/2023_ucdavis/ecs36b/lec1/fractions'
 let g:netrw_dirhist_5='/'
 let g:netrw_dirhist_4='/Users/admin/Documents/2023_ucdavis/ecs36b/lec1/fractions'
-let g:netrw_dirhist_3='/Users/admin/Documents/2023_ucdavis/ecs36b/lec2'
-let g:netrw_dirhist_2='/Users/admin/Documents/2023_ucdavis/ecs36b'
-let g:netrw_dirhist_1='/Users/admin/Documents/2023_ucdavis/ecs36b/lec3'
-let g:netrw_dirhist_0='/Users/admin/Documents/2023_ucdavis/ecs36b'

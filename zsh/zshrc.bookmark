@@ -1,4 +1,5 @@
-bookmarks="$HOME/.dotfiles/bookmarks"
+mydir=${0:a:h}
+bookmarks="$mydir/bookmarks.txt"
 
 # Import all bookmarks
 source $bookmarks

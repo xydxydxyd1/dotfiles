@@ -3,6 +3,8 @@
 " Description: Plugins managed by vim-plug
 " Last Modified: January 07, 2023
 
+let s:my_dir = expand('<sfile>:p:h')
+
 call plug#begin('~/.dotfiles/vim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -37,7 +39,7 @@ let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"In
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ycm-core/YouCompleteMe', {'do': './install.py --all'}
 let g:ycm_clangd_binary_path = '/usr/bin/clangd'
-let g:ycm_show_diagnostics_ui = 0		"Turns off diagnostic display
+"let g:ycm_show_diagnostics_ui = 0		"Turns off diagnostic display
 "let g:ycm_global_ycm_extra_conf = '~/.vim'
 "let g:ycm_enable_semantic_highlighting=1	"Enable better syntax highlight
 "let g:ycm_enable_inlay_hints = 1		"Enable inlay hints
@@ -46,9 +48,9 @@ let g:ycm_show_diagnostics_ui = 0		"Turns off diagnostic display
 "                       AsychronousLintEngine: linting                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM has diagnostic display, which do similar things
-"Plug 'dense-analysis/ale', {'on': []}
-"let g:ale_echo_cursor = 1		"Error messages show up below
-"let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
+" Plug 'dense-analysis/ale', {'on': []}
+" let g:ale_echo_cursor = 1		"Error messages show up below
+" let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       vim-autoformat: autoformatter                        "
@@ -61,16 +63,16 @@ Plug 'vim-autoformat/vim-autoformat'
 "             VimTeX: filetype and syntax plugin for LaTeX files             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'lervag/vimtex'
-if filereadable(expand("~/.vim/vimrc.plug.vimtex_config"))
-	source ~/.vim/vimrc.plug.vimtex_config
+if filereadable(expand(s:my_dir."/vimrc.plug.vimtex_config"))
+    :execute "source".s:my_dir."/vimrc.plug.vimtex_config"
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                MarkdownPreview: preview plugin for markdown                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-if filereadable(expand("~/.vim/vimrc.plug.markdown_preview_config"))
-	source ~/.vim/vimrc.plug.vimtex_config
+if filereadable(expand(s:my_dir."/vimrc.plug.markdown_preview_config"))
+    :execute "source".s:my_dir."/vimrc.plug.markdown_preview_config"
 endif
 
 call plug#end()

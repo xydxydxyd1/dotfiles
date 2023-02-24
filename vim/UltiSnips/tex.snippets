@@ -54,6 +54,7 @@ $0
 endsnippet
 
 snippet dmathead "discrete math head"
+\usepackage{amsfonts}
 \usepackage{amsthm}
 \newtheorem{theorem}{Thm.}
 \newtheorem{claim}{Claim.}
@@ -129,11 +130,11 @@ $0
 endsnippet
 
 snippet mtil "minted inline code" i
-\mintinline{${1:python}}|$2|$0
+\mintinline{${1:cpp}}|$2|$0
 endsnippet
 
 snippet mted "minted paragrpah code"
-\begin{minted}{${1:python}}
+\begin{minted}{${1:cpp}}
 	$2
 \end{minted}
 $0
@@ -158,20 +159,48 @@ snippet m_ps "math power series" i
 endsnippet
 
 #######################################################################
+#                                Sets                                 #
+#######################################################################
+
+context "isMath()"
+snippet Nset "swap not for logic equivalent in math mode" Ai
+\mathbb{N}
+endsnippet
+
+context "isMath()"
+snippet Zset "swap not for logic equivalent in math mode" Ai
+\mathbb{Z}
+endsnippet
+
+context "isMath()"
+snippet Qset "swap not for logic equivalent in math mode" Ai
+\mathbb{Q}
+endsnippet
+
+context "isMath()"
+snippet Rset "swap not for logic equivalent in math mode" Ai
+\mathbb{R}
+endsnippet
+
+#######################################################################
 #                           Logic Operators                           #
 #######################################################################
 context "isMath()"
-snippet not "swap not for logic equivalent in math mode" Ai
+snippet not "swap not for logic equivalent in math mode" i
 \neg
 endsnippet
 
 context "isMath()"
-snippet and "swap and for logic equivalent in math mode" Ai
+snippet and "swap and for logic equivalent in math mode" i
 \land
 endsnippet
 
 context "isMath()"
-snippet or "swap or for logic equivalent in math mode" Ai
+snippet or "swap or for logic equivalent in math mode" i
 \lor
 endsnippet
 
+context "isMath()"
+snippet flr "swap or for logic equivalent in math mode" i
+\lfloor $1 \rfloor $0
+endsnippet
