@@ -76,16 +76,18 @@ snippet hrefhead "hyperref head"
 \urlstyle{same}
 endsnippet
 
-snippet pckg "usepackage"
-\usepackage{$1}$0
+snippet tcboxhead "head for tcolorbox"
+\newtcolorbox{tcbcompact}[1]
+{
+    boxsep=0.1mm,
+    after=\ignorespacesafterend,
+    title={#1}
+}
 endsnippet
 
-snippet align "align math"
-\begin{align*}
-	$1
-\end{align*}
-$0
-endsnippet
+#######################################################################
+#                         Special Characters                          #
+#######################################################################
 
 snippet bslash "backslash in text mode"
 \textbackslash $0
@@ -99,23 +101,23 @@ endsnippet
 # ($1)$0
 # endsnippet
 
-context "isMath()"
-snippet ^ "math mode exponent" Ai
-^{$1}$0
+#######################################################################
+#                            Tag Shortcuts                            #
+#######################################################################
+snippet pckg "usepackage"
+\usepackage{$1}$0
 endsnippet
 
-context "isMath()"
-snippet _ "math mode exponent" Ai
-_{$1}$0
+snippet boxedc "compact tcolorbox environment"
+\begin{tcbcompact}{$1}
+    ${2:${VISUAL}}
+\end{tcbcompact}
+$0
 endsnippet
 
 snippet lpar "labeled paragraph"
 \paragraph{$1} \label{$1}
 $0
-endsnippet
-
-snippet txt "text in math mode" i
-\text{$1}$0
 endsnippet
 
 snippet $ "inline math" A
@@ -154,13 +156,26 @@ snippet enumerate "enumerated list"
 \end{enumerate}
 endsnippet
 
+snippet href "hyper reference"
+\href{${1:${VISUAL}}}{${1:${VISUAL}}}$0
+endsnippet
+
+#######################################################################
+#                                Math                                 #
+#######################################################################
+
+context "isMath()"
 snippet m_ps "math power series" i
 \sum_{n=0}^{\infty} c_n(x-a)^n
 endsnippet
 
-#######################################################################
-#                                Sets                                 #
-#######################################################################
+snippet txt "text in math mode" i
+\text{$1}$0
+endsnippet
+
+##########
+#  Sets  #
+##########
 
 context "isMath()"
 snippet Nset "swap not for logic equivalent in math mode" Ai
@@ -182,9 +197,9 @@ snippet Rset "swap not for logic equivalent in math mode" Ai
 \mathbb{R}
 endsnippet
 
-#######################################################################
-#                           Logic Operators                           #
-#######################################################################
+###########
+#  Logic  #
+###########
 context "isMath()"
 snippet not "swap not for logic equivalent in math mode" i
 \neg
@@ -200,7 +215,21 @@ snippet or "swap or for logic equivalent in math mode" i
 \lor
 endsnippet
 
+#####################
+#  Other operators  #
+#####################
 context "isMath()"
 snippet flr "swap or for logic equivalent in math mode" i
 \lfloor $1 \rfloor $0
 endsnippet
+
+context "isMath()"
+snippet ^ "math mode exponent" Ai
+^{$1}$0
+endsnippet
+
+context "isMath()"
+snippet _ "math mode exponent" Ai
+_{$1}$0
+endsnippet
+
