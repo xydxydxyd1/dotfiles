@@ -132,11 +132,11 @@ $0
 endsnippet
 
 snippet mtil "minted inline code" i
-\mintinline{${1:cpp}}|$2|$0
+\mintinline{${1:text}}|$2|$0
 endsnippet
 
 snippet mted "minted paragrpah code"
-\begin{minted}{${1:cpp}}
+\begin{minted}{${1:text}}
 	$2
 \end{minted}
 $0
@@ -233,3 +233,7 @@ snippet _ "math mode exponent" Ai
 _{$1}$0
 endsnippet
 
+context "isMath()"
+snippet vec "math mode vector" i
+\vec{${1:${VISUAL}}}$0
+endsnippet

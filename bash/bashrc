@@ -1,0 +1,100 @@
+mydir="$HOME/.dotfiles/bash"
+
+####################
+#  Configurations  #
+####################
+
+export CLICOLOR=1
+export PATH=$PATH:/Users/admin/Library/Python/3.10/bin	# Add python bin directory to PATH
+
+set -o vi	# vi keybinds to shell
+
+##############################
+#  Shortcuts to Directories  #
+##############################
+
+alias snips='cd ~/.vim/plugged/vim-snippets/UltiSnips'	# Snippets library
+alias plans='cd ~/Documents/plans'			# All project planning documents
+
+# School
+alias school='cd ~/Documents/2023_ucdavis'
+alias his='cd ~/Documents/2023_ucdavis/HIS017B'
+alias ecs='cd ~/Documents/2023_ucdavis/ECS036B'
+alias ecs20='cd ~/Documents/2023_ucdavis/ECS020'
+
+if [[ -f $mydir/bashrc.bookmark ]];
+then
+	source $mydir/bashrc.bookmark;
+fi;
+
+#####################
+#  Custom Commands  #
+#####################
+
+# Command Modifications
+alias ls='ls -G'	# Enable colorized directory list
+alias ll='ls -l'	# List directories, but loooong
+alias la='ls -a'	# List directories, but also the ~~secrets~~
+alias lla='ls -la'	# List directories, but loooong
+
+alias rm='rm -i'	# Always emable removal confirmation prompts
+
+# Set default version to c++11
+alias clang++='clang++ -std=c++11 -stdlib=libc++'
+
+alias python='python3'
+alias yabe='yabai -m'
+
+untar(){
+	tar -xvf $1
+}
+# Run command in new terminal tab
+function runInNewTab() {  
+    osascript >/dev/null <<EOF
+    tell application "System Events"
+    tell process "Terminal" to keystroke "t" using command down
+        end tell
+    tell application "Terminal" to do script "$*" in front window
+EOF
+}
+alias vimt='runInNewTab vim'
+
+# Split screen commands
+sp_half(){
+	printf '\e[8;58;110t'
+	printf '\e[3;768;0t'
+}
+sp_full(){
+	printf '\e[8;58;220t'
+	printf '\e[3;108;0t'
+}
+
+# Git stuff
+git_safe_del(){
+	git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
+}
+
+# Quick compilation
+ecsgcc(){
+	gcc -g -Wall -Wextra -Werror $1 -o $2
+}
+simplegcc(){
+	gcc -g -Wall -Wextra $1 -o $2
+}
+
+# Accessing CSIF school computers
+csif(){
+	ssh xydxydxy@pc"${1:=32}".cs.ucdavis.edu
+}
+sftp_csif(){
+	sftp xydxydxy@pc"${1:=32}".cs.ucdavis.edu
+}
+
+# Misc.
+his_textbook(){
+	# Start taking history textbook notes with this one command!
+	his
+	open his_textbook_2.pdf -a Google\ Chrome
+	open -a Terminal
+	vimt 2_gilded_age.md
+}
