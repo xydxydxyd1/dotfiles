@@ -31,6 +31,25 @@ $0
 \end{document}
 endsnippet
 
+snippet subfhead "head for subfiles"
+\documentclass[../main.tex]{subfiles} 
+
+\begin{document}
+$1
+\end{document}
+endsnippet
+
+snippet dndhead "head for DnD template"
+\documentclass[10pt,twoside,twocolumn,openany,nodeprecatedcode]{dndbook}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+$1
+\end{document}
+endsnippet
+
 snippet hishead "history head"
 \usepackage{multicol}
 \usepackage{enumitem}   % Better lists
@@ -77,6 +96,7 @@ snippet hrefhead "hyperref head"
 endsnippet
 
 snippet tcboxhead "head for tcolorbox"
+\usepackage{tcolorbox}
 \newtcolorbox{tcbcompact}[1]
 {
     boxsep=0.1mm,
@@ -137,7 +157,7 @@ endsnippet
 
 snippet mted "minted paragrpah code"
 \begin{minted}{${1:text}}
-	$2
+$2
 \end{minted}
 $0
 endsnippet
@@ -224,16 +244,35 @@ snippet flr "swap or for logic equivalent in math mode" i
 endsnippet
 
 context "isMath()"
-snippet ^ "math mode exponent" Ai
+snippet ss "math mode superscript" Ai
 ^{$1}$0
 endsnippet
 
 context "isMath()"
-snippet _ "math mode exponent" Ai
+snippet __ "math mode exponent" Ai
 _{$1}$0
 endsnippet
 
 context "isMath()"
 snippet vec "math mode vector" i
 \vec{${1:${VISUAL}}}$0
+endsnippet
+
+context "isMath()"
+snippet bico "binomial coefficient" Ai
+(^{$1}_{$2})$0
+endsnippet
+
+# Short hand for subscripts
+context "isMath()"
+snippet y0 "y_0" Ai
+y_0
+endsnippet
+context "isMath()"
+snippet z0 "z_0" Ai
+z_0
+endsnippet
+context "isMath()"
+snippet x0 "x_0" Ai
+x_0
 endsnippet

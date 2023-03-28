@@ -8,7 +8,6 @@ DIR_OF_THIS_SCRIPT = os.path.abspath( os.path.dirname( __file__ ) )
 flags = [
         '-Wall',
         '-Wextra',
-        '-Werror',
         '-x',
         'c++',
         '-std=c++11'

@@ -8,6 +8,11 @@ export CLICOLOR=1
 export PATH=$PATH:/Users/admin/Library/Python/3.10/bin	# Add python bin directory to PATH
 
 set -o vi	# vi keybinds to shell
+shopt -s extglob # regex glob
+
+
+# Add color to username section
+export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "
 
 ##############################
 #  Shortcuts to Directories  #
@@ -24,7 +29,7 @@ alias ecs20='cd ~/Documents/2023_ucdavis/ECS020'
 
 if [[ -f $mydir/bashrc.bookmark ]];
 then
-	source $mydir/bashrc.bookmark;
+    source $mydir/bashrc.bookmark;
 fi;
 
 #####################
@@ -46,14 +51,14 @@ alias python='python3'
 alias yabe='yabai -m'
 
 untar(){
-	tar -xvf $1
+    tar -xvf $1
 }
 # Run command in new terminal tab
-function runInNewTab() {  
+function runInNewTab() {
     osascript >/dev/null <<EOF
     tell application "System Events"
     tell process "Terminal" to keystroke "t" using command down
-        end tell
+end tell
     tell application "Terminal" to do script "$*" in front window
 EOF
 }
@@ -61,40 +66,40 @@ alias vimt='runInNewTab vim'
 
 # Split screen commands
 sp_half(){
-	printf '\e[8;58;110t'
-	printf '\e[3;768;0t'
+    printf '\e[8;58;110t'
+    printf '\e[3;768;0t'
 }
 sp_full(){
-	printf '\e[8;58;220t'
-	printf '\e[3;108;0t'
+    printf '\e[8;58;220t'
+    printf '\e[3;108;0t'
 }
 
 # Git stuff
 git_safe_del(){
-	git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
+    git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
 }
 
-# Quick compilation
-ecsgcc(){
-	gcc -g -Wall -Wextra -Werror $1 -o $2
-}
-simplegcc(){
-	gcc -g -Wall -Wextra $1 -o $2
+# Quick run
+run(){
+    clang++ $1
+    ./a.out
+    rm -rf a.out a.out.dSYM
 }
 
 # Accessing CSIF school computers
 csif(){
-	ssh xydxydxy@pc"${1:=32}".cs.ucdavis.edu
+    ssh xydxydxy@pc"${1:=32}".cs.ucdavis.edu
 }
 sftp_csif(){
-	sftp xydxydxy@pc"${1:=32}".cs.ucdavis.edu
+    sftp xydxydxy@pc"${1:=32}".cs.ucdavis.edu
 }
 
 # Misc.
 his_textbook(){
-	# Start taking history textbook notes with this one command!
-	his
-	open his_textbook_2.pdf -a Google\ Chrome
-	open -a Terminal
-	vimt 2_gilded_age.md
+    # Start taking history textbook notes with this one command!
+    his
+    open his_textbook_2.pdf -a Google\ Chrome
+    open -a Terminal
+    vimt 2_gilded_age.md
 }
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
