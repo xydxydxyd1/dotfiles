@@ -1,5 +1,5 @@
 let s:path = expand('<sfile>:p:h')
-set encoding=utf8	" Required for vimtex
+set encoding=utf-8	" Required for vimtex and youcompleteme
 
 filetype on
 filetype plugin on

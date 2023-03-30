@@ -49,6 +49,7 @@ alias clang++='clang++ -std=c++11 -stdlib=libc++'
 
 alias python='python3'
 alias yabe='yabai -m'
+alias vim='nvim'
 
 untar(){
     tar -xvf $1

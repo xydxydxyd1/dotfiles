@@ -1,5 +1,7 @@
 # Rice's .vim #
-Mainly for backup purposes
+Mainly for backup purposes.
+
+This directory is also used for neo vim
 
 ### Plug-ins installed ###
 | Name                                                               | Desc             | 

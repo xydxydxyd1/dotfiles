@@ -44,6 +44,20 @@ snippet v_anchor "add anchor to visual selection"
 $0
 endsnippet
 
+snippet sec "readable section"
+${1:${VISUAL}}
+`!p snip.rv=len(t[1])*'='`
+endsnippet
+
+snippet sub "readable subsection"
+${1:${VISUAL}}
+`!p snip.rv=len(t[1])*'-'`
+endsnippet
+
+snippet subsub "subsubsection"
+### $1 ###
+endsnippet
+
 snippet asec "Section with anchor point"
 # <a id="`!p snip.rv=t[1].replace(' ', '-')`"></a> $1 #
 $0

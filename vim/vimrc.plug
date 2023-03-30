@@ -25,7 +25,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'sirver/ultisnips'
 
 "Core snippets for UltiSnip
-"Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 "Set user for certain snippets
 let g:snips_author = "xydxydxyd1"
@@ -36,7 +36,7 @@ let g:UltiSnipsExpandTrigger = '<CR>'		"Tabs conflicts with YCM
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "horizontal"
-"let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"Incorporate vim-snippets
+let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"Incorporate vim-snippets
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       YouCompleteMe: Code completion                       "
