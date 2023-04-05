@@ -8,12 +8,20 @@ endsnippet
 snippet class "class definition"
 class $1
 {
-	public:
-		$0
-	private:
+    public:
+	$0
+    private:
 };
 endsnippet
 
-snippet container "std::container<>"
+snippet container "std::container<>" i
 std::$1<$2>$0
+endsnippet
+
+snippet main "int main()"
+int main()
+{
+    $0
+    return 0;
+}
 endsnippet

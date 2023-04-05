@@ -10,7 +10,6 @@ call plug#begin('~/.dotfiles/vim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        vim-airline: status/tabline                         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -78,5 +77,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 if filereadable(expand(s:my_dir."/vimrc.plug.markdown_preview_config"))
     :execute "source".s:my_dir."/vimrc.plug.markdown_preview_config"
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      Copilot: OpenAI code suggestion                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'github/copilot.vim'
+let g:copilot_filetypes = {
+	    \ '*': v:false,
+	    \ }
 
 call plug#end()

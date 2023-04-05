@@ -1,31 +1,9 @@
-########################
-#  History notes snips #
-########################
-
-snippet focus "link to textbook focus question section" w
-[$1](#focus)$0
-endsnippet
-
-snippet his_event "Simple history event list"
-- (${1:date}) ${2:name} $0
-endsnippet
-
-snippet a_his_event "Note template for historical event with anchor"
-- ($1) **[$2](#`!p snip.rv=t[2].replace(' ', '-')`)** -- $3
-- <a id="`!p snip.rv=t[2].replace(' ', '-')`"></a> (${1:date}) **${2:name}** -- ${3:description}
-endsnippet
-
-snippet his_event_link "Link to his_event"
-- (${1:date}) [${2:name}](#`!p snip.rv=t[2].replace(' ', '-')`): $0
-endsnippet
-
-snippet r/n "reader's note"
-(*R/N: $1*)$0
-endsnippet
-
 ################
 #  PERM SNIPS  #
 ################
+snippet emp "emphasis (adding * to both sides)"
+*${1:${VISUAL}}*
+endsnippet
 
 snippet head "Markdown notes heading" b
 ${1:Yundi Xu}
@@ -55,7 +33,7 @@ ${1:${VISUAL}}
 endsnippet
 
 snippet subsub "subsubsection"
-### $1 ###
+### ${1:${VISUAL}} ###
 endsnippet
 
 snippet asec "Section with anchor point"
