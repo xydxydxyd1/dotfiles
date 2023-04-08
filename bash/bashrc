@@ -14,18 +14,9 @@ shopt -s extglob # regex glob
 # Add color to username section
 export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "
 
-##############################
-#  Shortcuts to Directories  #
-##############################
+# Scripts
 
-alias snips='cd ~/.vim/plugged/vim-snippets/UltiSnips'	# Snippets library
-alias plans='cd ~/Documents/plans'			# All project planning documents
-
-# School
-alias school='cd ~/Documents/2023_ucdavis'
-alias his='cd ~/Documents/2023_ucdavis/HIS017B'
-alias ecs='cd ~/Documents/2023_ucdavis/ECS036B'
-alias ecs20='cd ~/Documents/2023_ucdavis/ECS020'
+export PATH="$HOME/scripts:$PATH"
 
 if [[ -f $mydir/bashrc.bookmark ]];
 then
