@@ -18,10 +18,23 @@ snippet container "std::container<>" i
 std::$1<$2>$0
 endsnippet
 
+snippet template "default template"
+template<typename T>
+$0
+endsnippet
+
+
 snippet main "int main()"
 int main()
 {
     $0
     return 0;
+}
+endsnippet
+snippet cppmain "main cpp file start"
+#include <iostream>
+using namespace std;
+int main()
+{$0
 }
 endsnippet
