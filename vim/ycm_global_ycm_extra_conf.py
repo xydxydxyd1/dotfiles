@@ -1,7 +1,6 @@
 from distutils.sysconfig import get_python_inc
 import platform
 import os
-import ycm_core
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -31,11 +30,6 @@ def DirectoryOfBuild():
 
 compilation_database_folder = DirectoryOfBuild()
 
-if os.path.exists( compilation_database_folder ):
-  database = ycm_core.CompilationDatabase( compilation_database_folder )
-else:
-  database = None
-
 SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]
 
 def IsHeaderFile( filename ):
@@ -62,6 +56,12 @@ def GetCompilationInfoForFile( filename ):
 
 
 def Settings( **kwargs ):
+  import ycm_core
+  if os.path.exists( compilation_database_folder ):
+    database = ycm_core.CompilationDatabase( compilation_database_folder )
+  else:
+    database = None
+
   if not database:
     return {
       'flags': flags,
