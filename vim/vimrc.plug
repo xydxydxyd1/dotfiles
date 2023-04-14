@@ -88,10 +88,4 @@ let g:copilot_filetypes = {
 	    \ }
 :command CopilotForceEnable let b:copilot_enabled = v:true
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                nvimgdb: debugger wrapper (works with lldb)                 "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
-let g:loaded_nvimgdb = 1	" Enable/Disable plugin
-
 call plug#end()
