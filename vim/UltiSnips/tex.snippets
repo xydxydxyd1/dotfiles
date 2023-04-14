@@ -125,19 +125,17 @@ endsnippet
 #                            Tag Shortcuts                            #
 #######################################################################
 snippet pckg "usepackage"
-\usepackage{$1}$0
+\usepackage{$1}
 endsnippet
 
 snippet boxedc "compact tcolorbox environment"
 \begin{tcbcompact}{$1}
     ${2:${VISUAL}}
 \end{tcbcompact}
-$0
 endsnippet
 
 snippet lpar "labeled paragraph"
 \paragraph{$1} \label{$1}
-$0
 endsnippet
 
 snippet $ "inline math" A
@@ -148,18 +146,16 @@ snippet \[ "paragraph math"
 \[
 	$1
 \]
-$0
 endsnippet
 
 snippet mtil "minted inline code" i
-\mintinline{${1:text}}|$2|$0
+\mintinline{${1:text}}|$2|
 endsnippet
 
 snippet mted "minted paragrpah code"
-\begin{minted}{${1:text}}
+\begin{minted}[linenos]{${1:text}}
 $2
 \end{minted}
-$0
 endsnippet
 
 snippet itemize "itemized list"
@@ -177,7 +173,7 @@ snippet enumerate "enumerated list"
 endsnippet
 
 snippet href "hyper reference"
-\href{${1:${VISUAL}}}{${1:${VISUAL}}}$0
+\href{${1:${VISUAL}}}{${1:${VISUAL}}}
 endsnippet
 
 #######################################################################
@@ -190,7 +186,7 @@ snippet m_ps "math power series" i
 endsnippet
 
 snippet txt "text in math mode" i
-\text{$1}$0
+\text{$1}
 endsnippet
 
 ##########
@@ -244,7 +240,7 @@ snippet flr "swap or for logic equivalent in math mode" i
 endsnippet
 
 context "isMath()"
-snippet ss "math mode superscript" Ai
+snippet ^^ "math mode superscript" Ai
 ^{$1}$0
 endsnippet
 
@@ -280,4 +276,9 @@ endsnippet
 context "isMath()"
 snippet x0 "x_0" Ai
 x_0
+endsnippet
+
+context "isMath()"
+snippet ( "parentheses" Ai
+\left( $1 \right) $0
 endsnippet

@@ -29,3 +29,5 @@ let s:plug_path = s:path . "/vimrc.plug"
 if filereadable(expand(s:plug_path))
 	:execute "source" . expand(s:plug_path)
 endif
+
+:command! Wq wq
