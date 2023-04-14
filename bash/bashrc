@@ -13,7 +13,6 @@ set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
 export cxxflags='-Wall -x c++ -std=c++17 -stdlib=libc++'
-export HOMEBREW_GITHUB_API_TOKEN=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
 
 #####################
 #  Custom Commands  #
