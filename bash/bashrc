@@ -32,5 +32,5 @@ alias vim='nvim'
 # Load bookmark system
 if [[ -f $mydir/bashrc.bookmark ]];
 then
-    source $mydir/bashrc.bookmark;
+    source "$mydir/bashrc.bookmark";
 fi;
