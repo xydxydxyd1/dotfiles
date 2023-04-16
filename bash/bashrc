@@ -19,7 +19,7 @@ export cxxflags='-Wall -x c++ -std=c++17 -stdlib=libc++'
 #####################
 
 # Command Modifications
-alias ls='ls -G'	# Enable colorized directory list
+alias ls='ls --color'	# Enable colorized directory list
 alias ll='ls -l'	# List directories, but loooong
 alias la='ls -a'	# List directories, but also the ~~secrets~~
 alias lla='ls -la'	# List directories, but loooong
@@ -27,7 +27,7 @@ alias rm='rm -i'	# Always emable removal confirmation prompts
 alias clang++="clang++ ${cxxflags}"
 alias python='python3'
 alias yabe='yabai -m'
-alias vim='nvim'
+#alias vim='nvim'
 
 # Load bookmark system
 if [[ -f $mydir/bashrc.bookmark ]];
