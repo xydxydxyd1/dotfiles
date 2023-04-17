@@ -89,4 +89,9 @@ let g:copilot_filetypes = {
 	    \ }
 :command CopilotForceEnable let b:copilot_enabled = v:true
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                  Gutentags: takes care of tag management                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'ludovicchabant/vim-gutentags'
+
 call plug#end()

@@ -9,6 +9,7 @@ export PATH=$PATH:/Users/admin/Library/Python/3.10/bin	# Add python bin director
 export VISUAL='vim -u NONE'	# used by visudo, disable vim configurations
 export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "	# customized username section
 export PATH="/usr/local/opt/openjdk/bin:$PATH"	 	# use homebrew java instead of native
+export PATH="/usr/local/Cellar/universal-ctags/p6.0.20230416.0/bin:$PATH"	# use homebrew universal-ctags instead of native
 set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
