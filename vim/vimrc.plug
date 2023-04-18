@@ -93,5 +93,6 @@ let g:copilot_filetypes = {
 "                  Gutentags: takes care of tag management                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_enabled = 1
 
 call plug#end()
