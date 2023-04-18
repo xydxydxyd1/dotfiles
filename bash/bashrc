@@ -13,7 +13,7 @@ export PATH="/usr/local/Cellar/universal-ctags/p6.0.20230416.0/bin:$PATH"	# use 
 set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
-export cxxflags='-Wall -x c++ -std=c++17 -stdlib=libc++'
+export CXXFLAGS='-Wall -std=c++17 -stdlib=libc++'
 
 #####################
 #  Custom Commands  #
@@ -25,7 +25,7 @@ alias ll='ls -l'	# List directories, but loooong
 alias la='ls -a'	# List directories, but also the ~~secrets~~
 alias lla='ls -la'	# List directories, but loooong
 alias rm='rm -i'	# Always emable removal confirmation prompts
-alias clang++="clang++ ${cxxflags}"
+alias clang++='clang++ ${CXXFLAGS}'
 alias python='python3'
 alias yabe='yabai -m'
 #alias vim='nvim'
