@@ -48,13 +48,14 @@ let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"In
 ""let g:ycm_enable_inlay_hints = 1		"Enable inlay hints
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       AsychronousLintEngine: linting                       "
+"                       AsynchronousLintEngine: linting                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM has diagnostic display, which do similar things
 Plug 'dense-analysis/ale'
-let g:ale_cpp_cc_options = $cxxflags
+let g:ale_cpp_cc_options = $CXXFLAGS
 let g:ale_echo_cursor = 1		"Error messages show up below
 let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
+let g:ale_use_neovim_diagnostics_api = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       vim-autoformat: autoformatter                        "
