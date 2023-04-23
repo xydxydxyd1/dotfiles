@@ -34,11 +34,17 @@ endsnippet
 snippet cppmain "main cpp file start"
 #include <iostream>
 using namespace std;
+
 int main()
 {$0
 }
 endsnippet
 
 snippet for "for loop template"
-for (int i = 0; i < $1; i++)
+for (int $1 = 0; $1 < $2; $1++)
 endsnippet
+
+snippet cout "cout endl pair (without std)"
+cout << $1 << endl;
+endsnippet
+

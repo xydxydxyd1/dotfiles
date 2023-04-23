@@ -1,0 +1,9 @@
+define hello
+    echo Hello, world!\n
+end
+
+hello
+
+define pvec
+    print *(&($arg0[0]))@$arg0.size()
+end
