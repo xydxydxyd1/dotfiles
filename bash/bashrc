@@ -13,6 +13,7 @@ export PATH="/usr/local/Cellar/universal-ctags/p6.0.20230416.0/bin:$PATH"	# use 
 set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
+export CXX='clang++'
 export CXXFLAGS='-Wall -std=c++17 -stdlib=libc++'
 
 #####################
