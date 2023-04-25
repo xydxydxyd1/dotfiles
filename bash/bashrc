@@ -1,3 +1,4 @@
+echo "Loading profile..."
 mydir="$HOME/.dotfiles/bash"
 
 ####################
@@ -5,16 +6,11 @@ mydir="$HOME/.dotfiles/bash"
 ####################
 
 export CLICOLOR=1
-export PATH=$PATH:/Users/admin/Library/Python/3.10/bin	# Add python bin directory to PATH
 export VISUAL='vim -u NONE'	# used by visudo, disable vim configurations
 export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "	# customized username section
-export PATH="/usr/local/opt/openjdk/bin:$PATH"	 	# use homebrew java instead of native
-export PATH="/usr/local/Cellar/universal-ctags/p6.0.20230416.0/bin:$PATH"	# use homebrew universal-ctags instead of native
 set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
-export CXX='clang++'
-export CXXFLAGS='-Wall -std=c++17 -stdlib=libc++'
 
 #####################
 #  Custom Commands  #
@@ -26,14 +22,14 @@ alias ll='ls -l'	# List directories, but loooong
 alias la='ls -a'	# List directories, but also the ~~secrets~~
 alias lla='ls -la'	# List directories, but loooong
 alias rm='rm -i'	# Always emable removal confirmation prompts
-alias clang++='clang++ ${CXXFLAGS}'
-alias g++='g++ ${CXXFLAGS}'
 alias python='python3'
-alias yabe='yabai -m'
-#alias vim='nvim'
 
 # Load bookmark system
-if [[ -f $mydir/bashrc.bookmark ]];
+if [[ -f $mydir/bookmarks.sh ]];
 then
-    source "$mydir/bashrc.bookmark";
+    source "$mydir/bookmarks.sh";
 fi;
+
+if [[ -f $mydir/extraconf.sh ]]; then
+    source "$mydir/extraconf.sh";
+fi
