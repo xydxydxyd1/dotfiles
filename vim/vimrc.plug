@@ -55,7 +55,7 @@ Plug 'dense-analysis/ale'
 let g:ale_cpp_cc_options = $CXXFLAGS
 let g:ale_echo_cursor = 1		"Error messages show up below
 let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
-let g:ale_use_neovim_diagnostics_api = 0
+let g:ale_use_neovim_diagnostics_api = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       vim-autoformat: autoformatter                        "
