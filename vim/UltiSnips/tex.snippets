@@ -279,6 +279,20 @@ x_0
 endsnippet
 
 context "isMath()"
+snippet {{ "braces" Ai
+\left\\{ ${1:${VISUAL}} \right\\}$0
+endsnippet
+
+context "isMath()"
+snippet [ "brackets" Ai
+\left[ ${1:${VISUAL}} \right]$0
+endsnippet
+
+context "isMath()"
 snippet ( "parentheses" Ai
-\left( $1 \right) $0
+\left( ${1:${VISUAL}} \right)$0
+endsnippet
+
+snippet ttt "math text"
+\texttt{$1}
 endsnippet

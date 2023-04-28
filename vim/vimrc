@@ -12,7 +12,7 @@ set ls=2
 set hlsearch
 
 " Use tabs for indentation with space
-set shiftwidth=4 smarttab
+set shiftwidth=4
 
 set backspace=indent,eol,start "set backspace so that it can delete newlines
 
