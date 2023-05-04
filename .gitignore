@@ -1,6 +1,7 @@
 # vim plugin (install on site)
 /vim/plug
 /vim/plugged
+/vim/vimrc.extraconf
 /bash/bookmarks.txt
 /bash/extraconf.sh
 tags

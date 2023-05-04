@@ -25,10 +25,16 @@ set ttimeoutlen=5
 
 set tags=./tags
 
-" Call the .vimrc.plug file
+" Plugins
 let s:plug_path = s:path . "/vimrc.plug"
 if filereadable(expand(s:plug_path))
 	:execute "source" . expand(s:plug_path)
+endif
+
+" Extra configs
+let s:extraconf_path = s:path . "/vimrc.extraconf"
+if filereadable(expand(s:extraconf_path))
+	:execute "source" . expand(s:extraconf_path)
 endif
 
 :command! Wq wq
