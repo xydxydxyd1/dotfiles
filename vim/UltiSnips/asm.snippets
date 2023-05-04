@@ -1,0 +1,20 @@
+snippet head "template for assembly"
+.global _start
+.equ ws, 4
+
+.data
+
+.text
+
+_start:
+
+done:
+    nop
+endsnippet
+
+snippet for "for loop template"
+$1_for_start:
+    $0
+    jmp $1_for_start
+$1_for_end:
+endsnippet
