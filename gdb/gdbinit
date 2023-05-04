@@ -8,8 +8,8 @@ define pvec
     print *(&($arg0[0]))@$arg0.size()
 end
 
-# reintp type variable num_elements
+# reint operation type variable num_elements
 # @brief reinterpret and print, used for assembly debug
-define reintp
-    print ( ($arg0*) &$arg1 )[0]@$arg2
+define reint
+    $arg0 ( ($arg1*) &$arg2 )[0]@$arg3
 end
