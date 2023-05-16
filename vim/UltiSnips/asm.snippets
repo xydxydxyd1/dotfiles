@@ -11,3 +11,19 @@ _start:
 done:
     nop
 endsnippet
+
+snippet fun "function"
+$1:
+	prologue:
+		.equ num_locals, 0
+		.equ num_saved_regs,0
+		push %ebp
+		movl %esp, %ebp
+		subl $(num_locals + num_saved_regs) * ws, %esp
+
+	epilogue:
+		movl %ebp, %esp
+		pop %ebp
+		ret
+$1_end:
+endsnippet
