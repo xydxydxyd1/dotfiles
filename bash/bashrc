@@ -24,6 +24,12 @@ alias lla='ls -la'	# List directories, but loooong
 alias rm='rm -i'	# Always emable removal confirmation prompts
 alias python='python3'
 
+# environment variable control
+gtest()
+{
+	export GTEST_FILTER="$1"
+}
+
 # Load bookmark system
 if [[ -f $mydir/bookmarks.sh ]];
 then
