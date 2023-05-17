@@ -21,10 +21,15 @@ set backspace=indent,eol,start "set backspace so that it can delete newlines
 set timeoutlen=1000
 set ttimeoutlen=5
 
+set updatetime=300 		" recommended by CoC
+set signcolumn=yes		" no jumping around when diagnostic comes up
+
 " Set fold method
 :command -nargs=1 Fdm setlocal foldmethod=<args>
 
 set tags=./tags
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Plugins
 let s:plug_path = s:path . "/vimrc.plug"
