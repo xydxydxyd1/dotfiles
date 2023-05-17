@@ -31,7 +31,7 @@ let g:snips_author = "xydxydxyd1"
 let g:snips_email = "xydxydxyd1@email.com"
 
 "Ultisnips Configurations
-let g:UltiSnipsExpandTrigger = '<CR>'		"Tabs conflicts with YCM
+let g:UltiSnipsExpandTrigger = '<s-CR>'		"Tabs conflicts with YCM
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "horizontal"
@@ -88,11 +88,23 @@ let g:copilot_filetypes = {
 	    \ 'tex': v:true,
 	    \ }
 :command CopilotForceEnable let b:copilot_enabled = v:true
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                  Gutentags: takes care of tag management                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_enabled = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                  Conquer of Completion: self explanatory                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_config_home = s:my_dir
+
+if filereadable(expand(s:my_dir."/vimrc.plug.coc_config"))
+    :execute "source".s:my_dir."/vimrc.plug.coc_config"
+endif
 
 call plug#end()
