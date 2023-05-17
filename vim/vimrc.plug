@@ -31,7 +31,7 @@ let g:snips_author = "xydxydxyd1"
 let g:snips_email = "xydxydxyd1@email.com"
 
 "Ultisnips Configurations
-let g:UltiSnipsExpandTrigger = '<s-CR>'		"Tabs conflicts with YCM
+let g:UltiSnipsExpandTrigger = '<CR>'		"Tabs conflicts with YCM
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "horizontal"
