@@ -8,19 +8,17 @@ endsnippet
 snippet class "class definition"
 class $1
 {
-    public:
-	$0
-    private:
+public:
+private:
 };
 endsnippet
 
-snippet container "std::container<>" i
+snippet ctn "std::container<>" i
 std::$1<$2>$0
 endsnippet
 
 snippet template "default template"
 template<typename T>
-$0
 endsnippet
 
 
@@ -47,6 +45,10 @@ endsnippet
 snippet cout "cout endl pair (without std)"
 cout << $1 << endl;
 endsnippet
+snippet stdcout "cout endl pair (with std)"
+std::cout << $1 << std::endl;
+endsnippet
+
 
 snippet inc "include system library"
 #include <$1>
@@ -60,7 +62,7 @@ struct $1
 endsnippet
 
 snippet if "if block"
-if($1)
+if ($1)
 {
     $0
 }
