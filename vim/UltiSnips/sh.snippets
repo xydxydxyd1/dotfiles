@@ -1,3 +1,10 @@
 snippet echo "echo expanded"
 echo $1 > $0
 endsnippet
+
+snippet yn "a y/n prompt template"
+read -r -p '$1' yn
+if [[ "$yn" != 'y' ]]; then
+	$0
+fi
+endsnippet
