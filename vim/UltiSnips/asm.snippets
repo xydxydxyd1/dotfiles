@@ -27,3 +27,14 @@ $1:
 		ret
 $1_end:
 endsnippet
+
+snippet loop "loop template"
+$1_loop_start:
+	# TODO: exit condition
+	cmpl
+	jmp $1_loop_end
+
+	# TODO: increment
+	jmp $1_loop_start
+$1_loop_end:
+endsnippet
