@@ -15,4 +15,4 @@ ln -s $HOME/.dotfiles/vim $HOME/.config/nvim
 ln -s $HOME/.dotfiles/gdb $HOME/.config/gdb
 
 read -r -p "CXX Compiler: " cxx
-echo cxx >> $HOME/.dotfiles/bash/extraconf.sh
+echo "export CXX='$cxx'" >> $HOME/.dotfiles/bash/extraconf.sh
