@@ -11,5 +11,5 @@ end
 # reint operation type variable num_elements
 # @brief reinterpret and print, used for assembly debug
 define reint
-    $arg0 ( ($arg1*) &$arg2 )[0]@$arg3
+    $arg0 ( ($arg1*) $arg2 )[0]@$arg3
 end
