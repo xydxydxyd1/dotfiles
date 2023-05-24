@@ -14,14 +14,14 @@ endsnippet
 
 snippet fun "function"
 $1:
-	prologue:
+	$1_prologue:
 		.equ num_locals, 0
 		.equ num_saved_regs,0
 		push %ebp
 		movl %esp, %ebp
-		subl $(num_locals + num_saved_regs) * ws, %esp
+		subl $(num_locals + num_saved_regs) * wordsize, %esp
 
-	epilogue:
+	$1_epilogue:
 		movl %ebp, %esp
 		pop %ebp
 		ret
