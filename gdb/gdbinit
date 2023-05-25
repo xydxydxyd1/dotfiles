@@ -13,3 +13,22 @@ end
 define reint
     $arg0 ( ($arg1*) $arg2 )[0]@$arg3
 end
+
+define matprint
+	set $i = 0
+	print
+	printf "{{"
+	while $i< $arg1
+		set $j = 0
+		printf "%d",$arg0[$i][$j++]
+		while $j< $arg2
+			printf ", %d",$arg0[$i][$j++]
+		end
+		printf "}"
+		set $i = 1+$i
+		if $i < $arg1
+			printf ", {"
+		end
+	end
+	printf "}\n"
+end
