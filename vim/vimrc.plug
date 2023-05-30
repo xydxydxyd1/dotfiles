@@ -107,4 +107,10 @@ if filereadable(expand(s:my_dir."/vimrc.plug.coc_config"))
     :execute "source".s:my_dir."/vimrc.plug.coc_config"
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"               vim-jsx-typescript: react jsx/tsx highlighting               "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 call plug#end()
