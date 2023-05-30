@@ -52,9 +52,9 @@ let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"In
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YCM has diagnostic display, which do similar things
 Plug 'dense-analysis/ale'
-let g:ale_cpp_cc_options = $CXXFLAGS
-let g:ale_echo_cursor = 1		"Error messages show up below
-let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
+if filereadable(expand(s:my_dir."/vimrc.plug.ale_config"))
+    :execute "source".s:my_dir."/vimrc.plug.ale_config"
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       vim-autoformat: autoformatter                        "
