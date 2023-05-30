@@ -4,8 +4,8 @@ let g:ale_echo_cursor = 1		"Error messages show up below
 let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
 
 let g:ale_linters = {
-\	'c' : ['clang']
-\	'cpp': ['clang']
+\	'c' : ['clang'],
+\	'cpp': ['clang'],
 \}
 
 let g:ale_fixers = {
