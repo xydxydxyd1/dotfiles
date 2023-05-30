@@ -13,3 +13,4 @@ This directory is also used for neo vim
 | [MarkdownPreview](https://github.com/iamcco/markdown-preview.nvim) | Markdown Preview | 
 | [VimTeX](https://github.com/lervag/vimtex)                         | LaTeX plugin     | 
 | [Gutentags](https://github.com/ludovicchabant/vim-gutentags)       | tags manager     | 
+| [vim-jsx-typescript](https://github.com/peitalin/vim-jsx-typescript)| jsx/tsx syntax  | 
