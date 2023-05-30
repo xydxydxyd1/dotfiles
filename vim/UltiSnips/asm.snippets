@@ -16,12 +16,24 @@ snippet fun "function"
 $1:
 	$1_prologue:
 		.equ num_locals, 0
-		.equ num_saved_regs,0
+		.equ num_saved_regs,3
 		push %ebp
 		movl %esp, %ebp
 		subl $(num_locals + num_saved_regs) * wordsize, %esp
 
+		.equ saved_ebx, (-3*wordsize)
+		.equ saved_esi, (-2*wordsize)
+		.equ saved_edi, (-1*wordsize)
+
+		movl %ebx, saved_ebx(%ebp)
+		movl %esi, saved_esi(%ebp)
+		movl %edi, saved_edi(%ebp)
+
+
 	$1_epilogue:
+		movl saved_ebx(%ebp), %ebx
+		movl saved_esi(%ebp), %esi
+		movl saved_edi(%ebp), %edi
 		movl %ebp, %esp
 		pop %ebp
 		ret
