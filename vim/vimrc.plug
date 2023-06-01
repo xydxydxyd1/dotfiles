@@ -113,4 +113,12 @@ endif
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          NERDTree: File explorer                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'preservim/nerdtree'
+if filereadable(expand(s:my_dir."/vimrc.plug.nerdtree_config"))
+    :execute "source".s:my_dir."/vimrc.plug.nerdtree_config"
+endif
+
 call plug#end()
