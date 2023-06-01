@@ -14,11 +14,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           Fugitive: git wrapper                            "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-fugitive'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         UltiSnips: snippet manager                         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'sirver/ultisnips'
@@ -36,16 +31,6 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "horizontal"
 let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"Incorporate vim-snippets
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       YouCompleteMe: Code completion                       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'ycm-core/YouCompleteMe', {'do': './install.py --all'}
-"let g:ycm_clangd_binary_path = '/usr/bin/clangd'
-""let g:ycm_show_diagnostics_ui = 0		"Turns off diagnostic display
-"let g:ycm_global_ycm_extra_conf = s:my_dir.'/ycm_global_ycm_extra_conf.py'
-""let g:ycm_enable_semantic_highlighting=1	"Enable better syntax highlight
-""let g:ycm_enable_inlay_hints = 1		"Enable inlay hints
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       AsynchronousLintEngine: linting                      "
