@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mv "$HOME/dotfiles" "$HOME/.dotfiles"
+
 # Link to home directory
 # bash
 ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.zshrc"

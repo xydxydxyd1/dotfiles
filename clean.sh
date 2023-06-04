@@ -8,3 +8,5 @@ rm -rf "$HOME/.vim"
 
 rm -rf "$HOME/.config/nvim"
 rm -rf "$HOME/.config/gdb"
+
+mv "$HOME/.dotfiles" "$HOME/dotfiles"
