@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Link to home directory
 # bash
