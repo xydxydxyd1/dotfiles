@@ -1,8 +1,10 @@
 # Eric's dotfiles #
+So I can setup my stuff with a couple commands
 
 ## Setup ##
-- Put the whole thing in home directory (due to complications with symlinkign zshrc)
+- **Put dotfiles (this directory) in home directory**
 - make sure there is a `.config` directory in your home directory
 - Run [setup.sh](setup.sh) to create symlink at proper places
-    - note: `.dotfiles` has to be in home directory
-- Run `:PlugInstall` in vim to install all the plugins
+
+## Clean up ##
+- Run [clean.sh](clean.sh) to reset (before running `setup.sh`)
