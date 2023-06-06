@@ -13,3 +13,11 @@ This directory is also used for neo vim
 | [Gutentags](https://github.com/ludovicchabant/vim-gutentags)       | tags manager     | 
 | [vim-jsx-typescript](https://github.com/peitalin/vim-jsx-typescript)| jsx/tsx syntax  | 
 | [NERDTree](https://github.com/preservim/nerdtree)                  | File explorer    | 
+
+### Custom Hotkeys/Mappings ###
+```text
+<Tab>: CoC select
+<CR>: UltiSnips expand
+<C-J>: Copilot accept
+<C-T>: NERDTree toggle
+```
