@@ -2,11 +2,13 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+"autocmd VimEnter * if (argc() == 0 && !exists('s:std_in')) | NERDTreeVCS | endif
+autocmd VimEnter * NERDTreeVCS
 
 " Start/stop NERDTree if window size is wide/narrow enough
-autocmd BufWinEnter,TabEnter,VimResized * if &columns > 100 | NERDTreeFocus | endif
-autocmd BufWinEnter,TabEnter,VimResized * if &columns < 100 | NERDTreeClose | endif
+autocmd BufWinEnter * NERDTreeMirror
+autocmd TabEnter,VimResized * if &columns > 100 | NERDTreeFocus | endif
+autocmd VimEnter,TabEnter,VimResized * if &columns < 100 | NERDTreeClose | endif
 
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
