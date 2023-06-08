@@ -4,6 +4,10 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
+" Start/stop NERDTree if window size is wide/narrow enough
+autocmd BufWinEnter,TabEnter,VimResized * if &columns > 100 | NERDTreeFocus | endif
+autocmd BufWinEnter,TabEnter,VimResized * if &columns < 100 | NERDTreeClose | endif
+
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
