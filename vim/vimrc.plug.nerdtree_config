@@ -7,8 +7,8 @@ autocmd VimEnter * NERDTreeVCS
 
 " Start/stop NERDTree if window size is wide/narrow enough
 autocmd BufWinEnter * NERDTreeMirror
-autocmd TabEnter,VimResized * if &columns > 100 | NERDTreeFocus | endif
-autocmd VimEnter,TabEnter,VimResized * if &columns < 100 | NERDTreeClose | endif
+autocmd TabEnter,VimResized * if &columns > 120 | NERDTreeFocus | endif
+autocmd VimEnter,TabEnter,VimResized * if &columns < 120 | NERDTreeClose | endif
 
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
