@@ -4,9 +4,9 @@ mv "$HOME/dotfiles" "$HOME/.dotfiles"
 
 # Link to home directory
 # bash
-ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.zshrc"
+ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.bashrc"
 # zsh
-ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.profile"
+ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.zshrc"
 # vim
 ln -s "$HOME/.dotfiles/vim" "$HOME/.vim"
 vim -c PlugInstall -c qa
