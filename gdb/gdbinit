@@ -1,3 +1,6 @@
+# avoid starting GDB with new shell
+set startup-with-shell off
+
 define hello
     echo Hello, world!\n
 end
