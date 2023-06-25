@@ -17,11 +17,11 @@ set_mark(){
 	if [[ -n ${!mark_name} ]]; then
 		read -r -p 'Mark already exists. Override (y/n)? ' yn
 		if [[ "$yn" != 'y' ]]; then
-			exit 1
+			return
 		fi
 
 		# remove previous mark_name entry
-		grep -q -v "$mark_name" < $bookmarks > $bookmarks
+		sed -i -e "/$mark_name/d" "$bookmarks"
 	fi
 
 	pwd | xargs printf "$mark_name='%s'\n"
@@ -30,4 +30,8 @@ set_mark(){
 	source "$bookmarks"	# reload bookmarks
 }
 
-# TODO: rm_mark <26-01-23, xydxydxyd1> #
+rm_mark(){
+	mark_name="mk_$1"
+	sed -i -e "/$mark_name/d" "$bookmarks"
+	echo "restart shell for removal to take effect"
+}
