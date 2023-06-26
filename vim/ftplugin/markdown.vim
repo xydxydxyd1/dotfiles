@@ -1,6 +1,2 @@
 set autoindent
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                              MarkdownPreview                               "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+let g:markdown_fenced_languages = ['cpp']
