@@ -37,6 +37,11 @@ then
     source "$mydir/bookmarks.sh";
 fi;
 
+cdgit()
+{
+	cd "$(git rev-parse --show-toplevel)" || return
+}
+
 if [[ -f $mydir/extraconf.sh ]]; then
     source "$mydir/extraconf.sh";
 fi
