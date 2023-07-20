@@ -32,6 +32,15 @@ set_mark(){
 
 rm_mark(){
 	mark_name="mk_$1"
+	if [[ -z $(cat $bookmarks | grep -e $mark_name=) ]]; then
+		echo "$mark_name does not exist"
+		return
+	fi
+	read -r -p "Remove $mark_name?" yn
+	if [[ "$yn" != 'y' ]]; then
+		echo "Aborted"
+		return
+	fi
 	sed -i -e "/$mark_name/d" "$bookmarks"
 	echo "restart shell for removal to take effect"
 }
