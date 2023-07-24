@@ -1,0 +1,20 @@
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {
+			\'python': 'python',
+			\'c++': 'cpp',
+			\'css': 'css',
+			\'js': 'javascript',
+			\'ts': 'typescript',
+			\}
+
+let g:vimwiki_list = [wiki]
+"let g:vimwiki_global_ext = 0	" do not set markdown as vimwiki files outside of wiki
+
+" Header colors
+"hi VimwikiHeader1 guifg=#FF0000
+"hi VimwikiHeader2 guifg=#00FF00
+"hi VimwikiHeader3 guifg=#0000FF
+"hi VimwikiHeader4 guifg=#FF00FF
+"hi VimwikiHeader5 guifg=#00FFFF
+"hi VimwikiHeader6 guifg=#FFFF00

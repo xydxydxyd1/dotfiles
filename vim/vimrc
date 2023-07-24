@@ -5,15 +5,13 @@ filetype on
 filetype plugin on
 filetype indent on
 
+set mouse=a	" cursor goes where mouse clicks
+
 syntax on
 set number
 set incsearch
 set ls=2
 set hlsearch
-
-" tab spacing
-set tabstop=4
-set shiftwidth=4	" for << and >>
 
 set backspace=indent,eol,start "set backspace so that it can delete newlines
 
