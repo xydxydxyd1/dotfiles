@@ -1,6 +1,20 @@
 extends universal_code
-snippet <> "tag"
-<$1>
-	${0:${VISUAL}}
-</$1>
+extends html
+
+snippet {/* "jsx comment"
+{/* $0 */}
+endsnippet
+
+
+snippet component "Template for a component file"
+`!p filename = snip.basename`import React from 'react';
+
+function `!p snip.rv=filename`() {
+	return (
+		<div>
+		</div>
+	);
+}
+
+export default `!p snip.rv=filename`;
 endsnippet

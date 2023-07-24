@@ -14,6 +14,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       vimwiki: personal wiki for vim                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'vimwiki/vimwiki'
+if filereadable(expand(s:my_dir."/vimrc.plug.vimwiki_config"))
+    :execute "source".s:my_dir."/vimrc.plug.vimwiki_config"
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         UltiSnips: snippet manager                         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'sirver/ultisnips'
@@ -26,7 +34,7 @@ let g:snips_author = "xydxydxyd1"
 let g:snips_email = "xydxydxyd1@email.com"
 
 "Ultisnips Configurations
-let g:UltiSnipsExpandTrigger = '<CR>'		"Tabs conflicts with YCM
+let g:UltiSnipsExpandTrigger = '<C-J>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "horizontal"
@@ -71,16 +79,11 @@ Plug 'github/copilot.vim'
 let g:copilot_filetypes = {
 	    \ '*': v:false,
 	    \ 'tex': v:true,
+		\ 'markdown': v:true,
 	    \ }
 :command CopilotForceEnable let b:copilot_enabled = v:true
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+imap <silent><script><expr> <C-K> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                  Gutentags: takes care of tag management                   "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_enabled = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                  Conquer of Completion: self explanatory                   "
@@ -105,5 +108,19 @@ Plug 'preservim/nerdtree'
 if filereadable(expand(s:my_dir."/vimrc.plug.nerdtree_config"))
     :execute "source".s:my_dir."/vimrc.plug.nerdtree_config"
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                  EditorConfig-Vim: Project wide settings                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Plug 'editorconfig/editorconfig-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       vim-prettier: Prettier wrapper                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
 
 call plug#end()
