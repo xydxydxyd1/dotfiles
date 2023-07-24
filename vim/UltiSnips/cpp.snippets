@@ -43,10 +43,10 @@ for (int $1 = 0; $1 < $2; $1++)
 endsnippet
 
 snippet cout "cout endl pair (without std)"
-cout << ${1:${VISUAL}} << endl;
+cout << ${0:${VISUAL}} << endl;
 endsnippet
 snippet stdcout "cout endl pair (with std)"
-std::cout << ${1:${VISUAL}} << std::endl;
+std::cout << ${0:${VISUAL}} << std::endl;
 endsnippet
 
 
@@ -63,4 +63,13 @@ endsnippet
 
 snippet if "if block"
 if ($0)
+endsnippet
+
+snippet ifndef "#ifndef block"
+#ifndef $1
+#define $1
+
+$0
+
+#endif /* ifndef $1 */
 endsnippet
