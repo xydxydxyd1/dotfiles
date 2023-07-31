@@ -13,7 +13,6 @@ This directory is also used for neo vim
 | [vim-jsx-typescript](https://github.com/peitalin/vim-jsx-typescript) | jsx/tsx syntax   |
 | [NERDTree](https://github.com/preservim/nerdtree)                    | File explorer    |
 | [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) | Code style help  |
-| [vim-prettier](https://github.com/prettier/vim-prettier)             | Prettier wrapper |
 | [vimwiki](https://github.com/vimwiki/vimwiki)                        | Wiki             |
 
 ### Custom Hotkeys/Mappings ###
