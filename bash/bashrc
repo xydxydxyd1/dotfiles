@@ -7,7 +7,7 @@ mydir="$HOME/.dotfiles/bash"
 
 export CLICOLOR=1
 export VISUAL='vim -u NONE'	# used by visudo, disable vim configurations
-export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "	# customized username section
+export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W\$(__git_ps1 \"(%s)\")_\$?}$ "	# customized username section
 set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
@@ -22,6 +22,7 @@ alias ll='ls -l'	# List directories, but loooong
 alias la='ls -a'	# List directories, but also the ~~secrets~~
 alias lla='ls -la'	# List directories, but loooong
 alias rm='rm -i'	# Always emable removal confirmation prompts
+alias ccat='pygmentize -g'  # Colorful cat
 alias python='python3'
 alias vimdb='\vim -c "packadd termdebug" -c "Termdebug"'
 
@@ -41,6 +42,9 @@ cdgit()
 {
 	cd "$(git rev-parse --show-toplevel)" || return
 }
+
+test -f $mydir/git-completion.bash && . $_
+test -f $mydir/git-prompt.sh && . $_
 
 if [[ -f $mydir/extraconf.sh ]]; then
     source "$mydir/extraconf.sh";
