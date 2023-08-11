@@ -8,3 +8,7 @@ if [[ "$yn" != 'y' ]]; then
 	$0
 fi
 endsnippet
+
+snippet source "source file if exist"
+test -f ~/$1 && . $_
+endsnippet

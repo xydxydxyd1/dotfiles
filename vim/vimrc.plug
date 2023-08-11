@@ -121,4 +121,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           Fugitive: Git wrapper                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'
+
 call plug#end()

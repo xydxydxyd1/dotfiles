@@ -7,7 +7,7 @@ mydir="$HOME/.dotfiles/bash"
 
 export CLICOLOR=1
 export VISUAL='vim -u NONE'	# used by visudo, disable vim configurations
-export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W_\$?}$ "	# customized username section
+export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W\$(__git_ps1 \"(%s)\")_\$?}$ "	# customized username section
 set -o vi	# vi keybinds to shell
 shopt -s extglob		# regex glob
 export PATH="$HOME/scripts:$PATH"	# Add scripts to PATH
@@ -44,6 +44,7 @@ cdgit()
 }
 
 test -f $mydir/git-completion.bash && . $_
+test -f $mydir/git-prompt.sh && . $_
 
 if [[ -f $mydir/extraconf.sh ]]; then
     source "$mydir/extraconf.sh";
