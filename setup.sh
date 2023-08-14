@@ -22,3 +22,4 @@ read -r -p "CXX Compiler: " cxx
 echo "export CXX='$cxx'" >> "$HOME/.dotfiles/bash/extraconf.sh"
 
 echo "NOTE: Run :PlugInstall in vim"
+nvim -c 'PlugInstall'

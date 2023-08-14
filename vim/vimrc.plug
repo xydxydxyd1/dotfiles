@@ -89,8 +89,9 @@ let g:copilot_no_tab_map = v:true
 "                  Conquer of Completion: self explanatory                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_config_home = s:my_dir
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-prettier']
 
+let g:coc_config_home = s:my_dir
 if filereadable(expand(s:my_dir."/vimrc.plug.coc_config"))
     :execute "source".s:my_dir."/vimrc.plug.coc_config"
 endif

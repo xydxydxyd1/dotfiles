@@ -31,3 +31,4 @@ endif
 
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>p <Plug>(coc-format)

@@ -21,5 +21,6 @@ This directory is also used for neo vim
 <C-J>: UltiSnips expand
 <C-K>: Copilot accept
 <C-T>: NERDTree toggle
-<Leader>p: ALEFix
+<Leader>p: coc-format
+<Leader>rn: coc-rename
 ```
