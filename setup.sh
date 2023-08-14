@@ -18,7 +18,10 @@ ln -s "$HOME/.dotfiles/vim" "$HOME/.config/nvim"
 # gdb
 ln -s "$HOME/.dotfiles/gdb" "$HOME/.config/gdb"
 
-read -r -p "CXX Compiler: " cxx
+read -r -p "CXX Compiler (used in some of my scripts): " cxx
 echo "export CXX='$cxx'" >> "$HOME/.dotfiles/bash/extraconf.sh"
 
-echo "NOTE: Run :PlugInstall in vim"
+read -r -p 'Some vim plugins may require npm/yarn. Proceed? (y/n) ' yn
+if [[ "$yn" == 'y' ]]; then
+    nvim -c 'PlugInstall'
+fi

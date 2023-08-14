@@ -6,4 +6,4 @@ let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
 let g:ale_fix_on_save = 0
 
 " hotkey habit from vim-prettier
-nnoremap <Leader>p :ALEFix<CR>
+" nnoremap <Leader>p :ALEFix<CR>
