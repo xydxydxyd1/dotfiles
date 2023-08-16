@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Note: use `-P` flag when `cd` into symlink to resolve dot-dot. Otherwise, your pwd will look
+# like ~/.mk/mark_name instead of ~/some/directory/mark_name, and when you try to go back with
+# `cd ..` you will end up in the bookmark directory
+
 # Set default bookmark directory
 [ -n "$mark_folder" ] || mark_folder="$HOME/.mk"
 
@@ -13,8 +17,13 @@ set_mark(){
 	# TODO: Verbosity level <26-01-23, xydxydxyd1> #
 	# TODO: Bookmark Description <26-01-23, xydxydxyd1> #
 
-	curr_mark_path="$mark_folder/$1"
+    dest="$(pwd)/$2"
+    if [[ ! -e $dest ]]; then
+        echo "$dest does not exist. Aborting..."
+        return
+    fi
 
+	curr_mark_path="$mark_folder/$1"
 	if [[ -e $curr_mark_path ]]; then
 		read -r -p 'Mark already exists. Override (y/n)? ' yn
         if [[ "$yn" != 'y' ]]; then
@@ -26,9 +35,8 @@ set_mark(){
         rm -f "$curr_mark_path"
 	fi
 
-    # Create symlink
-    ln -s "$(pwd)" "$curr_mark_path"
-    echo "Symlink created: $curr_mark_path --> $(pwd)"
+    ln -sr "$dest" "$curr_mark_path"
+    echo "Symlink created: $curr_mark_path --> $dest"
 }
 
 rm_mark(){
@@ -39,7 +47,7 @@ rm_mark(){
         return
     fi
 
-	read -r -p "Remove $curr_mark_path?" yn
+	read -r -p "Remove $curr_mark_path? " yn
 	if [[ "$yn" != 'y' ]]; then
 		echo "Aborting..."
 		return
