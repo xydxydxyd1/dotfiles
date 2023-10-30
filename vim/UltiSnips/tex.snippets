@@ -5,7 +5,7 @@ def insert_itm_command(snip):
 	for line in snip.splitlines():
 		for i in range(0, len(line)):
 			if not line[i].isspace():
-				output += line[:i] + "\item " + line[i:]
+				output += line[:i] + "\t\item " + line[i:]
 				output += '\n'
 				break
 	return output[:-1]
@@ -75,6 +75,7 @@ endsnippet
 snippet dmathead "discrete math head"
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\newtheorem{definition}{Def.}
 \newtheorem{theorem}{Thm.}
 \newtheorem{claim}{Claim.}
 \newtheorem{axiom}{Axiom.}
@@ -160,15 +161,18 @@ endsnippet
 
 snippet itemize "itemized list"
 \begin{itemize}
-	`!p snip.rv = insert_itm_command(t[1])`
-	$0${1:${VISUAL}}
+`!p snip.rv = insert_itm_command(snip.v.text + t[1])`
 \end{itemize}
+endsnippet
+
+snippet i "item"
+\item
 endsnippet
 
 snippet enumerate "enumerated list"
 \begin{enumerate}
-	`!p snip.rv = insert_itm_command(t[1])`
-	$0${1:${VISUAL}}
+`!p snip.rv = insert_itm_command(t[1])`
+$0${1:${VISUAL}}
 \end{enumerate}
 endsnippet
 
@@ -185,7 +189,7 @@ snippet m_ps "math power series" i
 \sum_{n=0}^{\infty} c_n(x-a)^n
 endsnippet
 
-snippet txt "text in math mode" i
+snippet txt "text in math mode" Ai
 \text{$1}
 endsnippet
 
@@ -245,18 +249,47 @@ snippet ^^ "math mode superscript" Ai
 endsnippet
 
 context "isMath()"
-snippet __ "math mode exponent" Ai
+snippet __ "math mode subscript" Ai
 _{$1}$0
 endsnippet
 
 context "isMath()"
-snippet hat "math mode hat" i
-\hat{${1:${VISUAL}}}$0
+snippet "([A-Za-z])([0-9])" "math mode autodetect subscript" Air
+`!p snip.rv = match.group(1) + "_" + match.group(2)`
 endsnippet
 
 context "isMath()"
-snippet vec "math mode vector" i
-\vec{${1:${VISUAL}}}$0
+snippet "vec([A-Za-z])" "math mode vector" Air
+`!p snip.rv = "\\vec{" + match.group(1) + "}"`
+endsnippet
+context "isMath()"
+snippet "([A-Za-z])vec" "math mode vector" Air
+`!p snip.rv = "\\vec{" + match.group(1) + "}"`
+endsnippet
+
+context "isMath()"
+snippet "hat([A-Za-z])" "math mode hat" Air
+`!p snip.rv = "\\hat{" + match.group(1) + "}"`
+endsnippet
+context "isMath()"
+snippet "([A-Za-z])hat" "math mode hat" Air
+`!p snip.rv = "\\hat{" + match.group(1) + "}"`
+endsnippet
+
+context "isMath()"
+snippet hat "math mode unit vector" i
+\hat{${1:${VISUAL}}}$0
+endsnippet
+
+# mathematical operators
+context "isMath()"
+snippet sqrt "Squre root" Ai
+\sqrt{ ${1:${VISUAL}} }$0
+endsnippet
+
+context "isMath()"
+snippet frac "Fraction" Ai
+\frac{ ${1:${VISUAL}} }{ $2 }$0
 endsnippet
 
 context "isMath()"
@@ -293,6 +326,20 @@ snippet (( "parentheses" Ai
 \left( ${1:${VISUAL}} \right)$0
 endsnippet
 
+context "isMath()"
+snippet | "absolute value" i
+\left| ${1:${VISUAL}} \right|$0
+endsnippet
+
+context "isMath()"
+snippet sin "sine" Ai
+\sin
+endsnippet
+context "isMath()"
+snippet cos "cosine" Ai
+\cos
+endsnippet
+
 snippet ttt "math text"
 \texttt{$1}
 endsnippet
@@ -304,4 +351,3 @@ endsnippet
 snippet `` "quote" Ai
 \`\`$0 ''
 endsnippet
-
