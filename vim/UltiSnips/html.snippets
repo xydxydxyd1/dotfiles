@@ -10,8 +10,6 @@ snippet html "HTML template"
 </html>
 endsnippet
 
-snippet <> "tag"
-<$1>
-	${0:${VISUAL}}
-</$1>
+snippet "<(([^ ]*).*)(?<!\/)>" "Automatic smart HTML tags" Ar
+<`!p snip.rv = match.group(1)`>${0:${VISUAL}}</`!p snip.rv = match.group(2)`>
 endsnippet
