@@ -23,6 +23,7 @@ endglobal
 snippet head "general head"
 \documentclass{report}
 \usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -194,27 +195,16 @@ snippet txt "text in math mode" Ai
 endsnippet
 
 ##########
-#  Sets  #
+#  Matrices  #
 ##########
 
 context "isMath()"
-snippet Nset "swap not for logic equivalent in math mode" Ai
-\mathbb{N}
+snippet "([A-Z])set" "math mode vector" Air
+`!p snip.rv = "\\mathbb{" + match.group(1) + "}"`
 endsnippet
-
 context "isMath()"
-snippet Zset "swap not for logic equivalent in math mode" Ai
-\mathbb{Z}
-endsnippet
-
-context "isMath()"
-snippet Qset "swap not for logic equivalent in math mode" Ai
-\mathbb{Q}
-endsnippet
-
-context "isMath()"
-snippet Rset "swap not for logic equivalent in math mode" Ai
-\mathbb{R}
+snippet quad "for matrix spacing" A
+\quad
 endsnippet
 
 ###########
@@ -263,7 +253,7 @@ snippet "vec([A-Za-z])" "math mode vector" Air
 `!p snip.rv = "\\vec{" + match.group(1) + "}"`
 endsnippet
 context "isMath()"
-snippet "([A-Za-z])vec" "math mode vector" Air
+snippet "([A-Za-z])vec" "math mode vector" ir
 `!p snip.rv = "\\vec{" + match.group(1) + "}"`
 endsnippet
 
