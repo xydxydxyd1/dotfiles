@@ -24,3 +24,8 @@ This directory is also used for neo vim
 <Leader>p: coc-format
 <Leader>rn: coc-rename
 ```
+
+### Custom Functions ###
+```text
+Pngpaste destination: saves the image in clipboard and insert corresponding latex
+```
