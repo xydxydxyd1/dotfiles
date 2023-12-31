@@ -66,16 +66,13 @@ snippet ecshead "head for ecs"
 endsnippet
 
 snippet mathead "head for math"
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{multicol}
-\usepackage{enumitem}   % Better lists
+\usepackage{multicol,enumitem}
+\usepackage{amsmath,amssymb,physics}
 $0
 endsnippet
 
 snippet dmathead "discrete math head"
-\usepackage{amsfonts}
-\usepackage{amsthm}
+\usepackage{amsfonts,amsthm}
 \newtheorem{definition}{Def.}
 \newtheorem{theorem}{Thm.}
 \newtheorem{claim}{Claim.}
@@ -136,8 +133,20 @@ snippet boxedc "compact tcolorbox environment"
 \end{tcbcompact}
 endsnippet
 
-snippet lpar "labeled paragraph"
-\paragraph{$1} \label{$1}
+snippet par "paragraph"
+\paragraph{$1}
+endsnippet
+snippet subsub "subsubsection"
+\subsubsection{$1}
+endsnippet
+snippet sub "subsection"
+\subsection{$1}
+endsnippet
+
+snippet beg "begin"
+\begin{$1}
+    ${0:${VISUAL}}
+\end{$1}
 endsnippet
 
 snippet $ "inline math" A
@@ -244,17 +253,33 @@ _{$1}$0
 endsnippet
 
 context "isMath()"
+snippet "(\\vec{[A-Za-z]})T" "math mode autodetect transpose vector" Air
+`!p snip.rv = match.group(1) + "^T"`
+endsnippet
+context "isMath()"
 snippet "([A-Za-z])([0-9])" "math mode autodetect subscript" Air
 `!p snip.rv = match.group(1) + "_" + match.group(2)`
 endsnippet
 
+# Linear Algebra
 context "isMath()"
-snippet "vec([A-Za-z])" "math mode vector" Air
-`!p snip.rv = "\\vec{" + match.group(1) + "}"`
+snippet vb "vector block" i
+\vb*{$0}
 endsnippet
 context "isMath()"
-snippet "([A-Za-z])vec" "math mode vector" ir
+snippet "vec([A-Za-z])" "old math mode vector" Air
 `!p snip.rv = "\\vec{" + match.group(1) + "}"`
+endsnippet
+snippet "vb([A-Za-z0])" "math mode vector" Air
+`!p snip.rv = "\\vb*{" + match.group(1) + "}"`
+endsnippet
+context "isMath()"
+snippet "([A-Za-z])vb" "math mode vector" ir
+`!p snip.rv = "\\vb*{" + match.group(1) + "}"`
+endsnippet
+context "isMath()"
+snippet "([A-Za-z])TT" "Transpose" Air
+`!p snip.rv = match.group(1) + "^T"`
 endsnippet
 
 context "isMath()"
