@@ -1,0 +1,9 @@
+snippet <! "comment"
+<!-- $0 -->
+endsnippet
+
+snippet import "Import dataset"
+library(readr)
+$1 <- read_csv("$2")
+View($1)
+endsnippet

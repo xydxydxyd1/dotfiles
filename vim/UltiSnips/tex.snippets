@@ -24,6 +24,7 @@ snippet head "general head"
 \documentclass{report}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{subfiles}
 
 \begin{document}
 
@@ -58,11 +59,7 @@ snippet hishead "history head"
 endsnippet
 
 snippet ecshead "head for ecs"
-\usepackage{multicol}
-\usepackage{enumitem}   % Better lists
 \usepackage{minted}	% For code listing
-
-\setlist{itemsep=1pt}
 endsnippet
 
 snippet mathead "head for math"
@@ -187,7 +184,7 @@ $0${1:${VISUAL}}
 endsnippet
 
 snippet href "hyper reference"
-\href{${1:${VISUAL}}}{${1:${VISUAL}}}
+\href{${1:url}}{${2:text}}
 endsnippet
 
 #######################################################################
@@ -197,6 +194,10 @@ endsnippet
 context "isMath()"
 snippet m_ps "math power series" i
 \sum_{n=0}^{\infty} c_n(x-a)^n
+endsnippet
+context "isMath()"
+snippet sum "summation" i
+\sum_{i=0}^{n}
 endsnippet
 
 snippet txt "text in math mode" Ai
@@ -353,6 +354,10 @@ endsnippet
 context "isMath()"
 snippet cos "cosine" Ai
 \cos
+endsnippet
+context "isMath()"
+snippet log "log" Ai
+\log
 endsnippet
 
 snippet ttt "math text"
