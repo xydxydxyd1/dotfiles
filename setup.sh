@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./clean.sh
+
 mv "$HOME/dotfiles" "$HOME/.dotfiles"
 
 # Link to home directory
