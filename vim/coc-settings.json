@@ -1,4 +1,11 @@
 {
   "suggest.noselect": true,
-  "diagnostic.displayByAle": true
+  "diagnostic.displayByAle": true,
+  "languageserver": {
+    "csharp": {
+      "command": "csharp-ls",
+      "rootPatterns": ["*.sln", "git"],
+      "filetypes": ["cs", "csharp"]
+    }
+  }
 }
