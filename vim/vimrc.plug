@@ -40,14 +40,14 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "horizontal"
 let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"Incorporate vim-snippets
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       AsynchronousLintEngine: linting                      "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" YCM has diagnostic display, which do similar things
-Plug 'dense-analysis/ale'
-if filereadable(expand(s:my_dir."/vimrc.plug.ale_config"))
-    :execute "source".s:my_dir."/vimrc.plug.ale_config"
-endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""                       AsynchronousLintEngine: linting                      "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" YCM has diagnostic display, which do similar things
+"Plug 'dense-analysis/ale'
+"if filereadable(expand(s:my_dir."/vimrc.plug.ale_config"))
+"    :execute "source".s:my_dir."/vimrc.plug.ale_config"
+"endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       vim-autoformat: autoformatter                        "
@@ -116,12 +116,6 @@ if filereadable(expand(s:my_dir."/vimrc.plug.nerdtree_config"))
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                  EditorConfig-Vim: Project wide settings                   "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-Plug 'editorconfig/editorconfig-vim'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         JavaScript syntax plugins                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'yuezk/vim-js'
@@ -141,5 +135,6 @@ Plug 'tpope/vim-surround'
 "                          Nvim-R: self explanatory                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'jalvesaq/Nvim-R'
+let R_pdfviewer = "okular"
 
 call plug#end()

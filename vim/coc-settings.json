@@ -1,6 +1,5 @@
 {
   "suggest.noselect": true,
-  "diagnostic.displayByAle": true,
   "languageserver": {
     "csharp": {
       "command": "csharp-ls",
