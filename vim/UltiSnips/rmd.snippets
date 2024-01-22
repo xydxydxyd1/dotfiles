@@ -7,3 +7,9 @@ library(readr)
 $1 <- read_csv("$2")
 View($1)
 endsnippet
+
+snippet appendix "appendix code"
+## Appendix Code
+```{r, ref.label=knitr::all_labels(),echo=TRUE,eval=FALSE}
+```
+endsnippet

@@ -271,6 +271,12 @@ context "isMath()"
 snippet "vec([A-Za-z])" "old math mode vector" Air
 `!p snip.rv = "\\vec{" + match.group(1) + "}"`
 endsnippet
+context "isMath()"
+
+snippet "bar([A-Za-z])" "bar above variable" Air
+`!p snip.rv = "\\bar{" + match.group(1) + "}"`
+endsnippet
+
 snippet "vb([A-Za-z0])" "math mode vector" Air
 `!p snip.rv = "\\vb*{" + match.group(1) + "}"`
 endsnippet

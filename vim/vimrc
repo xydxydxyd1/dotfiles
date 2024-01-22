@@ -17,7 +17,6 @@ set hlsearch
 
 " Editing
 set backspace=indent,eol,start "set backspace so that it can delete newlines
-set textwidth=65
 
 " Set delay for escape sequence
 set timeoutlen=1000
