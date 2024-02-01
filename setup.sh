@@ -7,6 +7,7 @@ mv "$HOME/dotfiles" "$HOME/.dotfiles"
 # Link to home directory
 # bash
 ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.profile"
+ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.bashrc"
 # zsh
 ln -s "$HOME/.dotfiles/bash/bashrc" "$HOME/.zshrc"
 # vim
