@@ -27,6 +27,7 @@ alias rm='rm -i'	# Always emable removal confirmation prompts
 alias ccat='pygmentize -g'  # Colorful cat
 alias python='python3'
 alias vimdb='\vim -c "packadd termdebug" -c "Termdebug"'
+alias open='xdg-open'
 # List directory after cd
 cd() {
     # Use -P flag to resolve symlinks to absolute paths; mainly for bookmark system
