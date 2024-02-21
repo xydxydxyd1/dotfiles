@@ -1,0 +1,16 @@
+snippet fncb "A function call with a callback" i
+${1:function}(() => {
+});
+endsnippet
+
+# Async snippets
+snippet .catch "catch clause" i
+.catch((err) => {
+    $0
+});
+endsnippet
+snippet .then "then clause" i
+.then(($1) => {
+    $0
+})
+endsnippet

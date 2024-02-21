@@ -37,7 +37,7 @@ snippet subfhead "head for subfiles"
 \documentclass[../main.tex]{subfiles} 
 
 \begin{document}
-$1
+$0
 \end{document}
 endsnippet
 
@@ -48,7 +48,7 @@ snippet dndhead "head for DnD template"
 \usepackage[utf8]{inputenc}
 
 \begin{document}
-$1
+$0
 \end{document}
 endsnippet
 
@@ -156,8 +156,8 @@ snippet \[ "paragraph math"
 \]
 endsnippet
 
-snippet mtil "minted inline code" i
-\mintinline{${1:text}}|$2|
+snippet mtil "minted inline code" Ai
+\mintinline{text}|$2|
 endsnippet
 
 snippet mted "minted paragrpah code"
@@ -319,20 +319,6 @@ snippet bico "binomial coefficient" Ai
 (^{$1}_{$2})$0
 endsnippet
 
-# Short hand for subscripts
-context "isMath()"
-snippet y0 "y_0" Ai
-y_0
-endsnippet
-context "isMath()"
-snippet z0 "z_0" Ai
-z_0
-endsnippet
-context "isMath()"
-snippet x0 "x_0" Ai
-x_0
-endsnippet
-
 context "isMath()"
 snippet {{ "braces" Ai
 \left\\{ ${1:${VISUAL}} \right\\}$0
@@ -364,6 +350,10 @@ endsnippet
 context "isMath()"
 snippet log "log" Ai
 \log
+endsnippet
+context "isMath()"
+snippet lg "lg" Ai
+\lg
 endsnippet
 
 snippet ttt "math text"
