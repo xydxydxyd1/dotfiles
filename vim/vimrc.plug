@@ -20,6 +20,8 @@ Plug 'aquach/vim-mediawiki-editor'
 if filereadable(expand(s:my_dir."/vimrc.plug.mediawiki_config"))
     :execute "source".s:my_dir."/vimrc.plug.mediawiki_config"
 endif
+" For syntax highlighting
+Plug 'chikamichi/mediawiki.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       vimwiki: personal wiki for vim                       "

@@ -1,32 +1,7 @@
-# Section Headings
-snippet sec "section"
-= ${0:${VISUAL}} =
-endsnippet
-snippet sub "subsection"
-== ${0:${VISUAL}} ==
-endsnippet
-snippet subsub "subsubsection"
-=== ${0:${VISUAL}} ===
-endsnippet
-snippet par "subsubsection"
-==== ${0:${VISUAL}} ====
-endsnippet
-snippet subpar "subsubsection"
-===== ${0:${VISUAL}} =====
-endsnippet
-
-# Text Formatting
-snippet * "bold"
-*${1:${VISUAL}}*
-endsnippet
-snippet _ "italic"
-_${1:${VISUAL}}_
-endsnippet
-snippet {{{ "code"
-{{{$1
-${0:${VISUAL}}
-}}}
-endsnippet
 snippet link "link"
 [[${1:https://www.website.com}|${2:description}]]
+endsnippet
+
+snippet "<(([^ ]*).*)(?<!\/)>" "Automatic smart HTML tags" Ar
+<`!p snip.rv = match.group(1)`>${0:${VISUAL}}</`!p snip.rv = match.group(2)`>
 endsnippet

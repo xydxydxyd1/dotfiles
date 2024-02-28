@@ -1,5 +1,6 @@
+let g:vimwiki_list = [{'path': '~/remote/mediawiki', 'path_html': '~/public_html/', 'syntax': 'mediawiki', 'ext': 'mediawiki'}]
 let wiki = {}
-let wiki.path = '~/vimwiki/'
+let wiki.path = '~/remote/mediawiki/'
 let wiki.nested_syntaxes = {
 			\'python': 'python',
 			\'c++': 'cpp',
@@ -7,6 +8,8 @@ let wiki.nested_syntaxes = {
 			\'js': 'javascript',
 			\'ts': 'typescript',
 			\}
+let wiki.ext = 'mediawiki'
+let wiki.syntax = 'media'
 
 let g:vimwiki_list = [wiki]
 "let g:vimwiki_global_ext = 0	" do not set markdown as vimwiki files outside of wiki
