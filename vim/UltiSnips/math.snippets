@@ -1,0 +1,60 @@
+# Snippets of latex math operations
+
+# Variable modifiers
+snippet "hhh([A-Za-z])" "math mode hat" Air
+`!p snip.rv = "\\hat{" + match.group(1) + "}"`
+endsnippet
+snippet "vvv([A-Za-z])" "old math mode vector" Air
+`!p snip.rv = "\\vec{" + match.group(1) + "}"`
+endsnippet
+#snippet "([A-Za-z])([0-9])" "math mode autodetect subscript" Air
+#`!p snip.rv = match.group(1) + "_" + match.group(2)`
+#endsnippet
+snippet __ "math mode subscript" Ai
+_{$1}$0
+endsnippet
+snippet "(\\vec{[A-Za-z]})T" "math mode autodetect transpose vector" Air
+`!p snip.rv = match.group(1) + "^T"`
+endsnippet
+
+# Mathematical Operators
+snippet ^^ "math mode superscript" Ai
+^{$1}$0
+endsnippet
+snippet rrr "Squre root" Ai
+\sqrt{ ${1:${VISUAL}} }$0
+endsnippet
+snippet fff "Fraction" Ai
+\frac{ ${1:${VISUAL}} }{ $2 }$0
+endsnippet
+
+# Symbol substitution
+# snippet ... "ellipsis" Ai
+# \ldots
+# endsnippet
+# snippet sin "sine" Ai
+# \sin
+# endsnippet
+# snippet cos "cosine" Ai
+# \cos
+# endsnippet
+# snippet log "log" Ai
+# \log
+# endsnippet
+# snippet lg "lg" Ai
+# \lg
+# endsnippet
+
+# Parentheses
+snippet | "absolute value" i
+\left| ${1:${VISUAL}} \right|$0
+endsnippet
+snippet {{ "braces" Ai
+\left\\{ ${1:${VISUAL}} \right\\}$0
+endsnippet
+snippet [[ "brackets" Ai
+\left[ ${1:${VISUAL}} \right]$0
+endsnippet
+snippet (( "parentheses" Ai
+\left( ${1:${VISUAL}} \right)$0
+endsnippet

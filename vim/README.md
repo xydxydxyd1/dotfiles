@@ -17,9 +17,9 @@ This directory is also used for neo vim
 
 ### Custom Hotkeys/Mappings ###
 ```text
-<Tab>: CoC select
-<C-J>: UltiSnips expand
-<C-K>: Copilot accept
+<C-J/K>: CoC select
+<(S-)Tab>: UltiSnips expand and movement
+<C-I>: Copilot accept
 <C-T>: NERDTree toggle
 <Leader>p: coc-format
 <Leader>rn: coc-rename

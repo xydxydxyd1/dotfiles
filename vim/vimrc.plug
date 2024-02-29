@@ -35,20 +35,12 @@ endif
 "                         UltiSnips: snippet manager                         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'sirver/ultisnips'
-
 "Core snippets for UltiSnip
 Plug 'honza/vim-snippets'
 
-"Set user for certain snippets
-let g:snips_author = "xydxydxyd1"
-let g:snips_email = "xydxydxyd1@email.com"
-
-"Ultisnips Configurations
-let g:UltiSnipsExpandTrigger = '<C-J>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsEditSplit = "horizontal"
-let g:UltiSnipsDirectories = ["UltiSnips", "plugged/vim-snippets/UltiSnips"]	"Incorporate vim-snippets
+if filereadable(expand(s:my_dir."/vimrc.plug.ultisnips_config"))
+    :execute "source".s:my_dir."/vimrc.plug.ultisnips_config"
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                       AsynchronousLintEngine: linting                      "
@@ -92,7 +84,7 @@ let g:copilot_filetypes = {
 		\ 'markdown': v:true,
 	    \ }
 :command CopilotForceEnable let b:copilot_enabled = v:true
-imap <silent><script><expr> <C-K> copilot#Accept("\<CR>")
+imap <silent><script><expr> <C-I> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
