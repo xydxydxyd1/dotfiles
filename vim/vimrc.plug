@@ -3,9 +3,18 @@
 " Description: Plugins managed by vim-plug
 " Last Modified: January 07, 2023
 
-let s:my_dir = expand('<sfile>:p:h')
+let s:plugin_config_dir = expand('<sfile>:p:h')."/plugin_configs/"
 
 call plug#begin('~/.dotfiles/vim/plugged')
+
+" Loads config from s:plugin_config_dir
+function s:load_plugin(conf_name)
+    if filereadable(expand(s:plugin_config_dir.a:conf_name))
+        execute "source".s:plugin_config_dir.a:conf_name
+    else
+        echo "Failed to load plugin config for ".a:conf_name
+    endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        vim-airline: status/tabline                         "
@@ -17,19 +26,14 @@ Plug 'vim-airline/vim-airline-themes'
 "              vim-mediawiki-editor: for editing my wiki website       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'aquach/vim-mediawiki-editor'
-if filereadable(expand(s:my_dir."/vimrc.plug.mediawiki_config"))
-    :execute "source".s:my_dir."/vimrc.plug.mediawiki_config"
-endif
+execute s:load_plugin("mediawiki_config.vim")
 " For syntax highlighting
 Plug 'chikamichi/mediawiki.vim'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       vimwiki: personal wiki for vim                       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'vimwiki/vimwiki'
-if filereadable(expand(s:my_dir."/vimrc.plug.vimwiki_config"))
-    :execute "source".s:my_dir."/vimrc.plug.vimwiki_config"
-endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                 bullets.vim: Automated bullet lists                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'bullets-vim/bullets.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         UltiSnips: snippet manager                         "
@@ -38,54 +42,19 @@ Plug 'sirver/ultisnips'
 "Core snippets for UltiSnip
 Plug 'honza/vim-snippets'
 
-if filereadable(expand(s:my_dir."/vimrc.plug.ultisnips_config"))
-    :execute "source".s:my_dir."/vimrc.plug.ultisnips_config"
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""                       AsynchronousLintEngine: linting                      "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" YCM has diagnostic display, which do similar things
-"Plug 'dense-analysis/ale'
-"if filereadable(expand(s:my_dir."/vimrc.plug.ale_config"))
-"    :execute "source".s:my_dir."/vimrc.plug.ale_config"
-"endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       vim-autoformat: autoformatter                        "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" clang-format has easy vim integration, but it is too bothersome to config
-Plug 'vim-autoformat/vim-autoformat'
-""let g:formatterpath = ['/usr/local/bin/clang-format']
+execute s:load_plugin("ultisnips_config.vim")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "             VimTeX: filetype and syntax plugin for LaTeX files             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'lervag/vimtex'
-if filereadable(expand(s:my_dir."/vimrc.plug.vimtex_config"))
-    :execute "source".s:my_dir."/vimrc.plug.vimtex_config"
-endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                MarkdownPreview: preview plugin for markdown                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-if filereadable(expand(s:my_dir."/vimrc.plug.markdown_preview_config"))
-    :execute "source".s:my_dir."/vimrc.plug.markdown_preview_config"
-endif
+execute s:load_plugin("vimtex_config.vim")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      Copilot: OpenAI code suggestion                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'github/copilot.vim'
-let g:copilot_filetypes = {
-	    \ '*': v:false,
-	    \ 'tex': v:true,
-		\ 'markdown': v:true,
-	    \ }
-:command CopilotForceEnable let b:copilot_enabled = v:true
-imap <silent><script><expr> <C-I> copilot#Accept("\<CR>")
-let g:copilot_no_tab_map = v:true
+execute s:load_plugin("copilot_config.vim")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                  Conquer of Completion: self explanatory                   "
@@ -100,10 +69,8 @@ let g:coc_global_extensions = [
             \ 'coc-pyright'
             \ ]
 
-let g:coc_config_home = s:my_dir
-if filereadable(expand(s:my_dir."/vimrc.plug.coc_config"))
-    :execute "source".s:my_dir."/vimrc.plug.coc_config"
-endif
+let g:coc_config_home = s:plugin_config_dir
+execute s:load_plugin("coc_config.vim")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               vim-jsx-typescript: react jsx/tsx highlighting               "
@@ -115,9 +82,7 @@ Plug 'peitalin/vim-jsx-typescript'
 "                          NERDTree: File explorer                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'preservim/nerdtree'
-if filereadable(expand(s:my_dir."/vimrc.plug.nerdtree_config"))
-    :execute "source".s:my_dir."/vimrc.plug.nerdtree_config"
-endif
+execute s:load_plugin("nerdtree_config.vim")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         JavaScript syntax plugins                          "

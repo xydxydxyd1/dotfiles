@@ -1,9 +1,0 @@
-let g:ale_cpp_cc_options = $CXXFLAGS
-"let g:ale_linters_explicit = 1	" avoid running all linters
-let g:ale_echo_cursor = 1		"Error messages show up below
-let g:ale_virtualtext_cursor = 0	"Stop cluttering my code with error messages!
-
-let g:ale_fix_on_save = 0
-
-" hotkey habit from vim-prettier
-" nnoremap <Leader>p :ALEFix<CR>
