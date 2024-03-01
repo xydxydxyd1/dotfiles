@@ -1,6 +1,24 @@
-#extends math
 extends vimwiki
 
+# Headings
+snippet sec "Section heading"
+= ${1:${VISUAL}} =
+endsnippet
+snippet sub "Subsection heading"
+== ${1:${VISUAL}} ==
+endsnippet
+snippet subsub "Subsubsection heading"
+=== ${1:${VISUAL}} ===
+endsnippet
+snippet par "Paragraph heading"
+==== ${1:${VISUAL}} ====
+endsnippet
+
+# Mathmode stuff
 snippet $ "Expand math" Ai
-<math> $1 </math>$0
+<math>$1</math>$0
+endsnippet
+snippet beg "Math begin"
+\begin{$1}$0
+\end{$1}
 endsnippet

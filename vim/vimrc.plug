@@ -34,6 +34,7 @@ Plug 'chikamichi/mediawiki.vim'
 "                 bullets.vim: Automated bullet lists                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'bullets-vim/bullets.vim'
+execute s:load_plugin("bullets_config.vim")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         UltiSnips: snippet manager                         "
