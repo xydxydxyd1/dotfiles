@@ -1,5 +1,9 @@
 {
   "suggest.noselect": true,
+  "list.insertMappings": {
+    "<C-j>": "command:CocNext",
+    "<C-k>": "command:CocPrev"
+  },
   "languageserver": {
     "csharp": {
       "command": "csharp-ls",

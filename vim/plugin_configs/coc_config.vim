@@ -4,7 +4,7 @@
 
 " use ctrl + J/K for selection
 inoremap <silent><expr> <C-J>
-      \ coc#pum#visible() ? coc#pum#next(1) :  "\<Tab>"
+      \ coc#pum#visible() ? coc#pum#next(1) : ""
 "      \ CheckBackspace() ? "\<Tab>" :
 "      \ coc#refresh()
 inoremap <expr><C-K> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"

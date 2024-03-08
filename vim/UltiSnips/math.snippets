@@ -4,8 +4,11 @@
 snippet "hhh([A-Za-z])" "math mode hat" Air
 `!p snip.rv = "\\hat{" + match.group(1) + "}"`
 endsnippet
-snippet "vvv([A-Za-z])" "old math mode vector" Air
+snippet "vvv([A-Za-z])" "math mode vector" Air
 `!p snip.rv = "\\vec{" + match.group(1) + "}"`
+endsnippet
+snippet "bbb([A-Za-z])" "math mode bar" Air
+`!p snip.rv = "\\bar{" + match.group(1) + "}"`
 endsnippet
 #snippet "([A-Za-z])([0-9])" "math mode autodetect subscript" Air
 #`!p snip.rv = match.group(1) + "_" + match.group(2)`
@@ -52,9 +55,9 @@ endsnippet
 #snippet {{ "braces" Ai
 #\left\\{ ${1:${VISUAL}} \right\\}$0
 #endsnippet
-snippet [[ "brackets" Ai
-\left[ ${1:${VISUAL}} \right]$0
-endsnippet
+#snippet [[ "brackets" Ai
+#\left[ ${1:${VISUAL}} \right]$0
+#endsnippet
 snippet (( "parentheses" Ai
 \left( ${1:${VISUAL}} \right)$0
 endsnippet
