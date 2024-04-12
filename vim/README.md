@@ -10,6 +10,7 @@ This directory is also used for neo vim
 | [UltiSnips](https://github.com/sirver/ultisnips)                | Snippet manager  |
 | [VimTeX](https://github.com/lervag/vimtex)                      | LaTeX plugin     |
 | [NERDTree](https://github.com/preservim/nerdtree)               | File explorer    |
+| [fzf.vim](https://github.com/junegunn/fzf.vim)                  | FZF fuzzy finder vim|
 
 ### Custom Hotkeys/Mappings ###
 ```text

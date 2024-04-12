@@ -102,9 +102,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          Nvim-R: self explanatory                          "
+"                          Nvim-R: R language IDE in nvim                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'jalvesaq/Nvim-R'
 let R_pdfviewer = "okular"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          fzf: Fuzzy finder                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 call plug#end()
