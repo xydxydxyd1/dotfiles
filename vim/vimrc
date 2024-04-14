@@ -28,13 +28,6 @@ set signcolumn=yes		" no jumping around when diagnostic comes up
 " Set fold method
 :command -nargs=1 Fdm setlocal foldmethod=<args>
 
-set tags=./tags
-
-autocmd FileType json syntax match Comment +\/\/.\+$+
-
-" Termdebug width
-let g:termdebug_wide = 163
-
 " Plugins
 let s:plug_path = s:path . "/vimrc.plug"
 if filereadable(expand(s:plug_path))
