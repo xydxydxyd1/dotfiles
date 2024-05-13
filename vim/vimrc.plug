@@ -114,5 +114,10 @@ let R_pdfviewer = "okular"
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"            vimwiki: Basically used for links in markdown             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'lervag/wiki.vim'
+execute s:load_plugin("vimwiki_config.vim")
 
 call plug#end()

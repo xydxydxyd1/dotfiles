@@ -16,7 +16,7 @@ This directory is also used for neo vim
 ```text
 <C-J/K>: CoC select
 <(S-)Tab>: UltiSnips expand and movement
-<C-I>: Copilot accept
+<C-L>: Copilot accept
 <C-T>: NERDTree toggle
 <Leader>p: coc-format
 <Leader>rn: coc-rename
