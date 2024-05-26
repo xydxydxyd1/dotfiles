@@ -39,11 +39,14 @@ int main()
 endsnippet
 
 snippet for "for loop template"
-for ($1 = 0; $1 < $2; $1++)
+for (int $1 = 0; $1 < $2; $1++)
 endsnippet
 
 snippet cout "cout endl pair (without std)"
 cout << ${0:${VISUAL}} << endl;
+endsnippet
+snippet cerr "cerr endl pair (without std)"
+cerr << ${0:${VISUAL}} << endl;
 endsnippet
 snippet stdcout "cout endl pair (with std)"
 std::cout << ${0:${VISUAL}} << std::endl;

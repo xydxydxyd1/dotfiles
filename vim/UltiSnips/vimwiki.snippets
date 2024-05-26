@@ -4,6 +4,6 @@ snippet link "link"
 [[${1:https://www.website.com}|${2:description}]]
 endsnippet
 
-snippet "<(([^ ]*).*)(?<!\/)>" "Automatic smart HTML tags" Ar
+snippet "<(([^ >]*).*)(?<!\/)>" "Automatic smart HTML tags" r
 <`!p snip.rv = match.group(1)`>${0:${VISUAL}}</`!p snip.rv = match.group(2)`>
 endsnippet
