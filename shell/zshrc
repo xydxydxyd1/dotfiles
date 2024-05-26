@@ -1,0 +1,9 @@
+echo "Extending shell configuration..."
+source "$HOME/.dotfiles/shell/shell.sh"
+
+echo "Loading zsh configurations..."
+
+fpath=(~/scripts/zsh $fpath)
+
+setopt PROMPT_SUBST
+export PS1='%F{green}%n%f@%F{cyan}%m%f:%2~%F{yellow}$(__git_ps1 " (%s)")%f$ '

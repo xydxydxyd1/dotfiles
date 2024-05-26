@@ -1,7 +1,9 @@
 #!/bin/bash
 # restore to pre-setup state
-rm -rf "$HOME/.zshrc"
-rm -rf "$HOME/.profile"
+
+rm -rf "$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.profile"
+rm -rf "$HOME/.editorconfig"
+rm -rf "$HOME/scripts"
 
 rm -rf "$HOME/.vim/plugged"
 rm -rf "$HOME/.vim"

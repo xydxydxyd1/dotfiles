@@ -1,15 +1,14 @@
-echo "Loading profile..."
-mydir="$HOME/.dotfiles/bash"
+echo "Loading shell configurations..."
+rc_dir="$HOME/.dotfiles/shell"
 
 ####################
 #  Configurations  #
 ####################
 
 export CLICOLOR=1
-export PS1="{\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W\$(__git_ps1 \"(%s)\")_\$?}$ "	# customized username section
 set -o vi	# vi keybinds to shell
-shopt -s extglob		# regex glob
 export PATH="$HOME/scripts/extra:$HOME/scripts:$PATH"	# Add scripts to PATH
+
 # Add nvm to path
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -39,16 +38,10 @@ cd() {
     ls
 }
 
-# environment variable control
-gtest()
-{
-	export GTEST_FILTER="$1"
-}
-
 # Load bookmark system
-if [[ -f $mydir/bookmarks.sh ]];
+if [[ -f $rc_dir/bookmarks.sh ]];
 then
-    source "$mydir/bookmarks.sh";
+    source "$rc_dir/bookmarks.sh";
 fi;
 
 cdgit()
@@ -56,9 +49,8 @@ cdgit()
 	cd "$(git rev-parse --show-toplevel)" || return
 }
 
-test -f $mydir/git-completion.bash && . $_
-test -f $mydir/git-prompt.sh && . $_
+test -f $rc_dir/git-prompt.sh && . $_
 
-if [[ -f $mydir/extraconf.sh ]]; then
-    source "$mydir/extraconf.sh";
+if [[ -f $rc_dir/extraconf.sh ]]; then
+    source "$rc_dir/extraconf.sh";
 fi
