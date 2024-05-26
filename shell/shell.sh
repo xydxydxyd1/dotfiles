@@ -7,6 +7,7 @@ rc_dir="$HOME/.dotfiles/shell"
 
 export CLICOLOR=1
 set -o vi	# vi keybinds to shell
+export KEYTIMEOUT=1 # Reduce key timeout for vi mode
 export PATH="$HOME/scripts/extra:$HOME/scripts:$PATH"	# Add scripts to PATH
 
 # Add nvm to path
@@ -37,6 +38,17 @@ cd() {
     fi
     ls
 }
+
+# Git commands
+alias gs='git status'
+alias ga='git add'
+alias gp='git pull'
+alias gps='git push'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout '
+alias gl='git log'
 
 # Load bookmark system
 if [[ -f $rc_dir/bookmarks.sh ]];
