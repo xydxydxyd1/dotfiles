@@ -9,6 +9,10 @@ setopt PROMPT_SUBST
 export PS1='%F{green}%n%f@%F{cyan}%m%f:%2~%F{yellow}$(__git_ps1 " (%s)")%f$ '
 
 # Completion
+zstyle ':completion:*' completer _complete
+# Case-sensitive, match-from-middle completion
+zstyle ':completion:*' matcher-list '' '+l:|=* r:|=*'
+# Enable completion
 autoload -Uz compinit; compinit
 # Tab twice to menu
 zstyle ':completion:*' menu select
