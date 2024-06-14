@@ -1,5 +1,6 @@
 echo "Loading shell configurations..."
-rc_dir="$HOME/.dotfiles/shell"
+export DF_DIR="$HOME/.dotfiles"
+rc_dir="$DF_DIR/shell"
 
 ####################
 #  Configurations  #
@@ -28,6 +29,7 @@ alias ccat='pygmentize -g'  # Colorful cat
 alias python='python3'
 alias vimdb='\vim -c "packadd termdebug" -c "Termdebug"'
 alias open='xdg-open'
+alias pvenv='source .venv/bin/activate'
 # List directory after cd
 cd() {
     # Use -P flag to resolve symlinks to absolute paths; mainly for bookmark system
