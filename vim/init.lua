@@ -13,3 +13,6 @@ require('editorconfig').properties.max_line_length = function(bufnr, val, opts)
     vim.cmd('set textwidth='..val)
     vim.cmd('set colorcolumn='..val)
 end
+
+-- Vim colorscheme is nice and greyish
+vim.cmd [[colorscheme desert]]
