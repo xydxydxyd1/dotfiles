@@ -10,5 +10,8 @@
       "rootPatterns": ["*.sln", "git"],
       "filetypes": ["cs", "csharp"]
     }
-  }
+  },
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.parameterTypes": false
 }
