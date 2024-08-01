@@ -1,0 +1,47 @@
+\ProvidesPackage{mystyle}
+\usepackage[margin=1in]{geometry}
+
+% include
+\usepackage{graphicx}   % images
+\usepackage{subfiles}   % subfiles
+
+\usepackage{minted}     % code
+
+% diagrams
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+% math
+\usepackage{
+    amsmath,    % math
+    amsfonts,   % set notation
+    amssymb,    % symbols
+    physics,    % more functions
+}
+
+% hypertext
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+\urlstyle{same}
+
+% box
+\usepackage{tcolorbox}
+\newtcolorbox{tcbcompact}[1]
+{
+    boxsep=0.1mm,
+    after=\ignorespacesafterend,
+    title={#1}
+}
+
+% table midrules or whatever
+\usepackage{booktabs}
+
+% Used in tables? Not sure
+\usepackage{array}
