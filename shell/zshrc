@@ -3,7 +3,10 @@ source "$HOME/.dotfiles/shell/shell.sh"
 
 echo "Loading zsh configurations..."
 
-fpath=(~/scripts/zsh $fpath)
+rc_dir="$DF_DIR/shell"
+
+path+=(~/scripts/zsh)
+export PATH
 
 setopt PROMPT_SUBST
 export PS1='%F{green}%n%f@%F{cyan}%m%f:%2~%F{yellow}$(__git_ps1 " (%s)")%f$ '
@@ -53,7 +56,25 @@ cursor_mode() {
 
 cursor_mode
 
+
+# FZF integration
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Set history
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=${HISTSIZE}
+HISTFILE=~/.zsh_history
+
+# Load extraconf
+if [[ -f $rc_dir/extraconf.zsh ]]; then
+    source "$rc_dir/extraconf.zsh";
+fi
+local alias_hook_path="/home/eric/Projects/alias-recommendation_xydxydxyd/src/alias_hook.zsh"
+if [ -f $alias_hook_path ]; then
+  source $alias_hook_path
+fi
+
