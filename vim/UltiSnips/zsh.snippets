@@ -1,3 +1,9 @@
 snippet alias "alias" b
 alias $1 = '$2'
 endsnippet
+
+snippet yn "yes or no" b
+read "yn?$1"
+if [[ "$yn" =~ ^[Yy]$ ]]; then
+fi
+endsnippet
