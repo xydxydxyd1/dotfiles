@@ -16,50 +16,36 @@ function s:load_plugin(conf_name)
     endif
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                        vim-airline: status/tabline                         "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline: status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"              vim-mediawiki-editor: for editing my wiki website       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-mediawiki-editor: for editing my wiki website
 Plug 'aquach/vim-mediawiki-editor'
 execute s:load_plugin("mediawiki_config.vim")
 " For syntax highlighting
 Plug 'chikamichi/mediawiki.vim'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                 bullets.vim: Automated bullet lists                  "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bullets.vim: Automated bullet lists
 Plug 'bullets-vim/bullets.vim'
 execute s:load_plugin("bullets_config.vim")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         UltiSnips: snippet manager                         "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UltiSnips: snippet manager
 Plug 'sirver/ultisnips'
 "Core snippets for UltiSnip
 Plug 'honza/vim-snippets'
 
 execute s:load_plugin("ultisnips_config.vim")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"             VimTeX: filetype and syntax plugin for LaTeX files             "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VimTeX: filetype and syntax plugin for LaTeX files
 Plug 'lervag/vimtex'
 execute s:load_plugin("vimtex_config.vim")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                      Copilot: OpenAI code suggestion                       "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Copilot: OpenAI code suggestion
 Plug 'github/copilot.vim'
 execute s:load_plugin("copilot_config.vim")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                  Conquer of Completion: self explanatory                   "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Conquer of Completion: self explanatory
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = [
             \ 'coc-rust-analyzer',
@@ -68,55 +54,41 @@ let g:coc_global_extensions = [
             \ 'coc-clangd',
             \ 'coc-prettier',
             \ 'coc-ultisnips',
+            \ 'coc-solargraph',
+            \ 'coc-java',
             \ 'coc-pyright'
             \ ]
 
 let g:coc_config_home = s:plugin_config_dir
 execute s:load_plugin("coc_config.vim")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"               vim-jsx-typescript: react jsx/tsx highlighting               "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-jsx-typescript: react jsx/tsx highlighting
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          NERDTree: File explorer                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree: File explorer
 Plug 'preservim/nerdtree'
 execute s:load_plugin("nerdtree_config.vim")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         JavaScript syntax plugins                          "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JavaScript syntax plugins
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           Fugitive: Git wrapper                            "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fugitive: Git wrapper
 Plug 'tpope/vim-fugitive'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         surround.vim: rename tags                          "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" surround.vim: rename tags
 Plug 'tpope/vim-surround'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          Nvim-R: R language IDE in nvim                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nvim-R: R language IDE in nvim
 Plug 'jalvesaq/Nvim-R'
 let R_pdfviewer = "okular"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          fzf: Fuzzy finder                           "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf: Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"            vimwiki: Basically used for links in markdown             "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimwiki: Basically used for links in markdown
 Plug 'lervag/wiki.vim'
 execute s:load_plugin("vimwiki_config.vim")
 
