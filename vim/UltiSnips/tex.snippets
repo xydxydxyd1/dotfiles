@@ -20,12 +20,15 @@ extends math
 #######################################################################
 
 snippet head "general head"
-\documentclass{report}
-\usepackage[margin=1in]{geometry}
-\usepackage{graphicx}
-\usepackage{subfiles}
+\documentclass{article}
+\usepackage{mystyle}
+
+\title{Title}
+\author{Eric Xu}
 
 \begin{document}
+
+\maketitle
 
 $0
 
@@ -104,17 +107,9 @@ endsnippet
 #                         Special Characters                          #
 #######################################################################
 
-snippet bslash "backslash in text mode"
-\textbackslash $0
-endsnippet
-
 snippet -> "arrow in text mode"
 $\rightarrow$
 endsnippet
-
-# snippet ( "Close parentheses automatically" Ai
-# ($1)$0
-# endsnippet
 
 #######################################################################
 #                            Tag Shortcuts                            #
@@ -127,6 +122,12 @@ snippet boxedc "compact tcolorbox environment"
 \begin{tcbcompact}{$1}
     ${2:${VISUAL}}
 \end{tcbcompact}
+endsnippet
+
+snippet boxed "tcolorbox"
+\begin{tcolorbox}
+    ${1:${VISUAL}}
+\end{tcolorbox}
 endsnippet
 
 snippet par "paragraph"
