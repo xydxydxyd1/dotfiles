@@ -1,3 +1,5 @@
+" Uncomment to temporarily disable Copilot for all filetypes
+let g:copilot_enabled = v:false
 "let g:copilot_filetypes = {
 "	    \ '*': v:false,
 "	    \ 'tex': v:true,
