@@ -2,6 +2,19 @@ snippet def "function definition"
 def $1($2):$0
 endsnippet
 
+
+# Boilerplates --- no variables, only for remembering the exact text
+
+
 snippet main "main function"
 if __name__ == "__main__":
 endsnippet
+
+snippet logging "configure logging module"
+logging.basicConfig(level=logging.DEBUG, filename='`!p snip.rv = snip.basename`.log', filemode='w')
+endsnippet
+
+snippet logger "module-wide logger recommended by logging module"
+logger = logging.getLogger(__name__)
+endsnippet
+
