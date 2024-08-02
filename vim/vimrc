@@ -11,6 +11,7 @@ set mouse=a	" cursor goes where mouse clicks
 " Appearance
 syntax on
 set number
+set relativenumber
 set incsearch
 set ls=2
 set hlsearch
