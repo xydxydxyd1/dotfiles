@@ -41,3 +41,7 @@ nmap <leader>p <Plug>(coc-format)
 
 " NerdTree
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" FZF
+nnoremap <C-n> :FZF<CR>
+nnoremap <C-m> :Buffer<CR>
