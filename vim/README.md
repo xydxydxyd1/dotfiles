@@ -18,6 +18,8 @@ This directory is also used for neo vim
 <(S-)Tab>: UltiSnips expand and movement
 <C-L>: Copilot accept
 <C-T>: NERDTree toggle
+<C-N>: FZF
+<C-M>: FZF Buffer
 <Leader>p: coc-format
 <Leader>rn: coc-rename
 ```
