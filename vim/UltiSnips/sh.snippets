@@ -10,5 +10,5 @@ fi
 endsnippet
 
 snippet source "source file if exist"
-test -f ~/$1 && . $_
+[ -s "$1" ] && \. "$1"
 endsnippet
