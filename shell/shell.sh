@@ -16,17 +16,8 @@ export PATH="$HOME/scripts/extra:$HOME/scripts:$PATH"	# Add scripts to PATH
 #  Custom Commands  #
 #####################
 
-# Command Modifications
-alias ls='ls --color'	# Enable colorized directory list
-alias ll='ls -l'	# List directories, but loooong
-alias la='ls -a'	# List directories, but also the ~~secrets~~
-alias lla='ls -la'	# List directories, but loooong
-alias rm='rm -i'	# Always emable removal confirmation prompts
-alias ccat='pygmentize -g'  # Colorful cat
-alias python='python3'
-alias vimdb='\vim -c "packadd termdebug" -c "Termdebug"'
-alias open='xdg-open'
-alias pvenv='source .venv/bin/activate'
+[ -s "$rc_dir/alias.sh" ] && \. "$rc_dir/alias.sh"
+
 # List directory after cd
 cd() {
     # Use -P flag to resolve symlinks to absolute paths; mainly for bookmark system
@@ -38,22 +29,8 @@ cd() {
     ls
 }
 
-# Git commands
-alias gs='git status'
-alias ga='git add'
-alias gp='git pull'
-alias gps='git push'
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias gco='git checkout '
-alias gl='git log'
-
-# Load bookmark system
-if [[ -f $rc_dir/bookmarks.sh ]];
-then
-    source "$rc_dir/bookmarks.sh";
-fi;
+# `mark` bookmark system
+[ -s "$rc_dir/bookmarks.sh" ] && \. "$rc_dir/bookmarks.sh"
 
 cdgit()
 {
