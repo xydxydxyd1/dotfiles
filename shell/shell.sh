@@ -3,20 +3,13 @@ echo "Loading shell configurations..."
 export DF_DIR="$HOME/.dotfiles"
 rc_dir="$DF_DIR/shell"
 
-####################
-#  Configurations  #
-####################
-
+# Shell configuration
 export CLICOLOR=1
 set -o vi	# vi keybinds to shell
 export KEYTIMEOUT=1 # Reduce key timeout for vi mode
-export PATH="$HOME/scripts/extra:$HOME/scripts:$PATH"	# Add scripts to PATH
 
-#####################
-#  Custom Commands  #
-#####################
-
-[ -s "$rc_dir/alias.sh" ] && \. "$rc_dir/alias.sh"
+# Add custom scripts repository
+export PATH="$HOME/scripts/extra:$HOME/scripts:$PATH"
 
 # List directory after cd
 cd() {
@@ -28,9 +21,6 @@ cd() {
     fi
     ls
 }
-
-# `mark` bookmark system
-[ -s "$rc_dir/bookmarks.sh" ] && \. "$rc_dir/bookmarks.sh"
 
 cdgit()
 {
@@ -45,15 +35,15 @@ pipfreeze()
 
 test -f $rc_dir/git-prompt.sh && . $_
 
-if [[ -f $rc_dir/extraconf.sh ]]; then
-    source "$rc_dir/extraconf.sh";
-fi
+[ -s "$rc_dir/alias.sh" ] && \. "$rc_dir/alias.sh"
+[ -s "$rc_dir/bookmarks.sh" ] && \. "$rc_dir/bookmarks.sh"
+[ -s "$rc_dir/extraconf.sh" ] && \. "$rc_dir/extraconf.sh"
 
-# Add nvm to path
 echo "Setting up NVM..."
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Autostart tmux
 #if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 #  exec tmux
 #fi
