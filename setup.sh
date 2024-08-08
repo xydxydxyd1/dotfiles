@@ -4,7 +4,7 @@
 
 export DF_DIR="$HOME/.dotfiles"
 if [[ -e $DF_DIR ]]; then
-    echo "$DF_DIR exists. Repo not moved."
+    echo "$DF_DIR already exists. Repo not moved."
     exit 1
 else
     mv "$HOME/dotfiles" "$DF_DIR"
@@ -19,6 +19,7 @@ ln -s "$DF_DIR/shell/bashrc" "$HOME/.bashrc"
 ln -s "$DF_DIR/shell/zshrc" "$HOME/.zshrc"
 ln -s "$DF_DIR/vim" "$HOME/.vim"
 ln -s "$DF_DIR/misc/editorconfig.ini" "$HOME/.editorconfig"
+ln -s "$DF_DIR/condarc" "$HOME/.condarc"
 
 # Link to .config
 ln -s "$DF_DIR/vim" "$XDG_CONFIG_HOME/nvim"
