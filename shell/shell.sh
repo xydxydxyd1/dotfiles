@@ -24,6 +24,7 @@ test -f $rc_dir/git-prompt.sh && . $_
 # Personal tools
 export PATH="$HOME/scripts/extra:$HOME/scripts:$PATH"
 [ -s "$rc_dir/alias.sh" ] && \. "$rc_dir/alias.sh"
+[ -s "$rc_dir/commands.sh" ] && \. "$rc_dir/commands.sh"
 [ -s "$rc_dir/bookmarks.sh" ] && \. "$rc_dir/bookmarks.sh"
 [ -s "$rc_dir/extraconf.sh" ] && \. "$rc_dir/extraconf.sh"
 
