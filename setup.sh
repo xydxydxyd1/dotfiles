@@ -3,24 +3,26 @@
 ./clean.sh
 
 export DF_DIR="$HOME/.dotfiles"
+if [[ -e $DF_DIR ]]; then
+    echo "$DF_DIR exists. Repo not moved."
+    exit 1
+else
+    mv "$HOME/dotfiles" "$DF_DIR"
+fi
 
-mv "$HOME/dotfiles" "$DF_DIR"
+if [[ -z $XDG_CONFIG_HOME ]]; then
+    XDG_CONFIG_HOME="$HOME/.config"
+fi
 
-# Link to home directory
-# bash
+# Link to home
 ln -s "$DF_DIR/shell/bashrc" "$HOME/.bashrc"
-# zsh
 ln -s "$DF_DIR/shell/zshrc" "$HOME/.zshrc"
-# vim
 ln -s "$DF_DIR/vim" "$HOME/.vim"
-# editorconfig
 ln -s "$DF_DIR/misc/editorconfig.ini" "$HOME/.editorconfig"
 
-# Link to .config directory
-# nvim
-ln -s "$DF_DIR/vim" "$HOME/.config/nvim"
-# gdb
-ln -s "$DF_DIR/gdb" "$HOME/.config/gdb"
+# Link to .config
+ln -s "$DF_DIR/vim" "$XDG_CONFIG_HOME/nvim"
+ln -s "$DF_DIR/gdb" "$XDG_CONFIG_HOME/gdb"
 
 read -r -p "CXX Compiler (used in some of my scripts): " cxx
 echo "export CXX='$cxx'" >> "$DF_DIR/bash/extraconf.sh"
