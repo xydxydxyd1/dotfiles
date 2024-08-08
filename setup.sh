@@ -19,7 +19,7 @@ ln -s "$DF_DIR/shell/bashrc" "$HOME/.bashrc"
 ln -s "$DF_DIR/shell/zshrc" "$HOME/.zshrc"
 ln -s "$DF_DIR/vim" "$HOME/.vim"
 ln -s "$DF_DIR/misc/editorconfig.ini" "$HOME/.editorconfig"
-ln -s "$DF_DIR/condarc" "$HOME/.condarc"
+ln -s "$DF_DIR/misc/condarc" "$HOME/.condarc"
 
 # Link to .config
 ln -s "$DF_DIR/vim" "$XDG_CONFIG_HOME/nvim"
