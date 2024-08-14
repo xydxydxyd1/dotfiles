@@ -73,8 +73,4 @@ HISTFILE=~/.zsh_history
 if [[ -f $rc_dir/extraconf.zsh ]]; then
     source "$rc_dir/extraconf.zsh";
 fi
-local alias_hook_path="/home/eric/Projects/alias-recommendation_xydxydxyd/src/alias_hook.zsh"
-if [ -f $alias_hook_path ]; then
-  source $alias_hook_path
-fi
 
