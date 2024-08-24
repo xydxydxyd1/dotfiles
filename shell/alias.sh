@@ -22,3 +22,4 @@ alias gl='git log'
 
 # Custom commands
 alias pvenv='source .venv/bin/activate'
+alias conda-export='conda env export --from-history > environment.yml'
