@@ -10,7 +10,10 @@ snippet main "main function"
 if __name__ == "__main__":
 endsnippet
 
-snippet logging "configure logging module"
+snippet logging "configure logging module without filename"
+logging.basicConfig(level=logging.DEBUG)
+endsnippet
+snippet loggingf "configure logging module with filename"
 logging.basicConfig(level=logging.DEBUG, filename='`!p snip.rv = snip.basename`.log', filemode='w')
 endsnippet
 
