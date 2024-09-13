@@ -4,6 +4,9 @@ function script_path()
    return str:match("(.*/)")
 end
 vim.cmd('source ' .. script_path() .. '/basic.vim')
+vim.cmd('source ' .. script_path() .. '/mappings.vim')
 
 -- Default is really bad
 vim.cmd.colorscheme("habamax")
+
+require("config.lazy")
