@@ -10,3 +10,4 @@ vim.cmd('source ' .. script_path() .. '/mappings.vim')
 vim.cmd.colorscheme("habamax")
 
 require("config.lazy")
+require("extraconf")

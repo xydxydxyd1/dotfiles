@@ -4,4 +4,5 @@ return {
     {"junegunn/fzf"},
     {"junegunn/fzf.vim"},
     {"honza/vim-snippets"},
+    {"neovim/nvim-lspconfig"},
 }
