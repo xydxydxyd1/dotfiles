@@ -7,12 +7,6 @@ if filereadable(expand(s:plug_path))
 	:execute "source" . expand(s:plug_path)
 endif
 
-" Plugins
-let s:plug_path = s:path . "/plugins.vim"
-if filereadable(expand(s:plug_path))
-	:execute "source" . expand(s:plug_path)
-endif
-
 " Mappings
 let s:plug_path = s:path . "/mappings.vim"
 if filereadable(expand(s:plug_path))
