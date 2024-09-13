@@ -5,14 +5,5 @@ function script_path()
 end
 vim.cmd('source ' .. script_path() .. '/basic.vim')
 
--- Add color column for text width"
-require('editorconfig').properties.max_line_length = function(bufnr, val, opts)
-  if opts.charset and opts.charset ~= "utf-8" then
-    error("foo can only be set when charset is utf-8", 0)
-  end
-    vim.cmd('set textwidth='..val)
-    vim.cmd('set colorcolumn='..val)
-end
-
 -- Vim colorscheme is nice and greyish
 vim.cmd [[colorscheme desert]]
