@@ -5,5 +5,5 @@ function script_path()
 end
 vim.cmd('source ' .. script_path() .. '/basic.vim')
 
--- Vim colorscheme is nice and greyish
-vim.cmd [[colorscheme desert]]
+-- Default is really bad
+vim.cmd.colorscheme("habamax")
