@@ -3,7 +3,7 @@ function script_path()
    local str = debug.getinfo(2, "S").source:sub(2)
    return str:match("(.*/)")
 end
-vim.cmd('source ' .. script_path() .. '/vimrc')
+vim.cmd('source ' .. script_path() .. '/basic.vim')
 
 -- Add color column for text width"
 require('editorconfig').properties.max_line_length = function(bufnr, val, opts)
