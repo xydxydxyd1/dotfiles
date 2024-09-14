@@ -20,6 +20,7 @@ ln -s "$DF_DIR/shell/zshrc" "$HOME/.zshrc"
 ln -s "$DF_DIR/vim" "$HOME/.vim"
 ln -s "$DF_DIR/misc/editorconfig.ini" "$HOME/.editorconfig"
 ln -s "$DF_DIR/misc/condarc" "$HOME/.condarc"
+ln -s "$DF_DIR/misc/tmux.conf" "$HOME/.tmux.conf"
 
 # Link to .config
 ln -s "$DF_DIR/vim" "$XDG_CONFIG_HOME/nvim"
@@ -31,11 +32,6 @@ echo "export CXX='$cxx'" >> "$DF_DIR/bash/extraconf.sh"
 read -r -p "Clone the scripts repo into $HOME/scripts?" yn
 if [[ "$yn" == 'y' ]]; then
     git clone https://github.com/xydxydxyd1/scripts.git "$HOME/scripts"
-fi
-
-read -r -p 'Some vim plugins may require npm/yarn. Proceed? (y/n) ' yn
-if [[ "$yn" == 'y' ]]; then
-    nvim -c 'PlugInstall'
 fi
 
 read -r -p 'Setup tex styles?' yn
