@@ -8,5 +8,13 @@ return {
             vim.keymap.set("n", "<C-m>", ":Buffer<CR>", {noremap = true})
         end
     },
-    {"neovim/nvim-lspconfig"},
+    {
+        "neovim/nvim-lspconfig",
+        init = function()
+            installed_lsps = require("config.local").installed_lsps
+            for _, lsp in ipairs(installed_lsps) do
+                require("lspconfig")[lsp].setup{}
+            end
+        end
+    },
 }
