@@ -19,7 +19,16 @@ return {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
                     if client.supports_method('textDocument/rename') then
-                        vim.keymap.set("n", "\\rn", vim.lsp.buf.rename, {noremap = true})
+                        vim.keymap.set("n",
+                                "\\rn",
+                                vim.lsp.buf.rename,
+                                {noremap = true})
+                    end
+                    if client.supports_method('textDocument/definition') then
+                        vim.keymap.set("n",
+                                "gd",
+                                vim.lsp.buf.definition,
+                                {noremap = true})
                     end
                 end,
             })
