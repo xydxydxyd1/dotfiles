@@ -9,4 +9,3 @@ vim.cmd('source ' .. script_path() .. '/basic.vim')
 vim.cmd.colorscheme("habamax")
 
 require("config.lazy")
-require("extraconf")
