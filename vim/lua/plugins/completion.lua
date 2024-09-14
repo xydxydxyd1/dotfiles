@@ -19,6 +19,7 @@ function cmp_config()
             { name = 'ultisnips' }, -- For ultisnips users.
         }, {
             { name = 'buffer' },
+            { name = 'path' }
         })
     })
 
