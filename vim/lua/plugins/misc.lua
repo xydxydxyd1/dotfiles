@@ -15,6 +15,14 @@ return {
             for _, lsp in ipairs(installed_lsps) do
                 require("lspconfig")[lsp].setup{}
             end
+            vim.api.nvim_create_autocmd('LspAttach', {
+                callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    if client.supports_method('textDocument/rename') then
+                        vim.keymap.set("n", "\\rn", vim.lsp.buf.rename, {noremap = true})
+                    end
+                end,
+            })
         end
     },
 }
