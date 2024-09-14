@@ -18,18 +18,16 @@ return {
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
-                    if client.supports_method('textDocument/rename') then
-                        vim.keymap.set("n",
-                                "\\rn",
-                                vim.lsp.buf.rename,
-                                {noremap = true})
+                    function set_keymap(method, lhs, rhs)
+                        opts={noremap=true}
+                        if client.supports_method('method') then
+                            vim.keymap.set("n", lhs, rhs, opts)
+                        end
                     end
-                    if client.supports_method('textDocument/definition') then
-                        vim.keymap.set("n",
-                                "gd",
-                                vim.lsp.buf.definition,
-                                {noremap = true})
-                    end
+                    set_keymap("textDocument/rename", "\\rn", vim.lsp.buf.rename)
+                    set_keymap("textDocument/definition", "gd", vim.lsp.buf.definition)
+                    set_keymap("textDocument/formatting", "\\f", vim.lsp.buf.format)
+                    set_keymap("textDocument/hover", "\\d", vim.lsp.buf.hover)
                 end,
             })
         end
