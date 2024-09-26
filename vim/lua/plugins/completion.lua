@@ -42,6 +42,14 @@ function cmp_config()
         matching = { disallow_symbol_nonprefix_matching = false }
     })
 
+    cmp.setup.filetype("tex", {
+        sources = {
+            { name = "vimtex" },
+            { name = "nvim_lsp" },
+            { name = "ultisnips" },
+            { name = "buffer" },
+        }
+    })
 end
 return {
     {"SirVer/ultisnips"},
