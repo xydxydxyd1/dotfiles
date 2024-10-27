@@ -52,7 +52,12 @@ function cmp_config()
     })
 end
 return {
-    {"SirVer/ultisnips"},
+    {
+        "SirVer/ultisnips",
+        init = function()
+            vim.g.UltiSnipsExpandOrJumpTrigger = "<tab>"
+        end
+    },
     {"honza/vim-snippets"},
     {
         "hrsh7th/nvim-cmp",
