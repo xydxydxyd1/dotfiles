@@ -56,4 +56,5 @@ return {
         end
     },
     { "bullets-vim/bullets.vim" },
+    { "tpope/vim-abolish" },
 }
