@@ -1,3 +1,19 @@
+-- Keys are langauge servers accepted by lspconfig. Values are passed to setup
+lsp_setups = {
+    rust = {
+        settings = {
+            ['rust-analyzer'] = {
+                diagnostics = {
+                    disabled = {"unused_import", "unused_variables"}
+                },
+                check = {
+                    ignore = {"unused_import", "unused_variables"}
+                },
+            }
+        }
+    }
+}
+
 return {
     {"tpope/vim-fugitive"},
     {"junegunn/fzf"},
@@ -13,14 +29,16 @@ return {
         init = function()
             installed_lsps = require("config.local").installed_lsps
             for _, lsp in ipairs(installed_lsps) do
-                require("lspconfig")[lsp].setup{}
+                args = lsp_setups[lsp]
+                if args == nil then args = {} end
+                require("lspconfig")[lsp].setup(args)
             end
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
                     function set_keymap(method, lhs, rhs)
                         opts={noremap=true}
-                        if client.supports_method('method') then
+                        if client.supports_method(method) then
                             vim.keymap.set("n", lhs, rhs, opts)
                         end
                     end
@@ -28,6 +46,7 @@ return {
                     set_keymap("textDocument/definition", "gd", vim.lsp.buf.definition)
                     set_keymap("textDocument/formatting", "\\f", vim.lsp.buf.format)
                     set_keymap("textDocument/hover", "\\d", vim.lsp.buf.hover)
+                    set_keymap("textDocument/diagnostic", "\\h", vim.diagnostic.open_float)
                 end,
             })
         end
