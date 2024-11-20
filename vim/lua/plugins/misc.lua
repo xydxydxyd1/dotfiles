@@ -46,7 +46,9 @@ return {
                     set_keymap("textDocument/definition", "gd", vim.lsp.buf.definition)
                     set_keymap("textDocument/formatting", "\\f", vim.lsp.buf.format)
                     set_keymap("textDocument/hover", "\\d", vim.lsp.buf.hover)
-                    set_keymap("textDocument/diagnostic", "\\h", vim.diagnostic.open_float)
+                    -- clangd didn't work well
+                    --set_keymap("textDocument/diagnostic", "\\a", vim.diagnostic.open_float)
+                    vim.keymap.set("n", "\\h", vim.diagnostic.open_float, {noremap=true})
                 end,
             })
         end
