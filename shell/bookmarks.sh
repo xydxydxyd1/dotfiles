@@ -12,6 +12,7 @@
 
 # For easy access of bookmarks: $mk/mark_name
 export mk="$mark_folder"
+export Mk="$mark_folder"
 
 set_mark(){
 	# TODO: Verbosity level <26-01-23, xydxydxyd1> #
