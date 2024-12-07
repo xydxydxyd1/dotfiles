@@ -78,4 +78,8 @@ return {
     },
     { "bullets-vim/bullets.vim" },
     { "tpope/vim-abolish" },
+    {
+        "jghauser/follow-md-links.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+    },
 }
