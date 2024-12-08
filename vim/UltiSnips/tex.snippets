@@ -1,4 +1,5 @@
 global !p
+from snippet_lib import *
 def insert_itm_command(snip):
 	output = ""
 	for line in snip.splitlines():
@@ -130,6 +131,10 @@ snippet boxed "tcolorbox"
 \end{tcolorbox}
 endsnippet
 
+snippet sec "section"
+\section{$1}%
+\label{sec:`!p snip.rv = tagify(t[1])`}
+endsnippet
 snippet par "paragraph"
 \paragraph{$1}
 endsnippet
@@ -366,4 +371,9 @@ endsnippet
 
 snippet `` "quote" Ai
 \`\`$0 ''
+endsnippet
+
+snippet call "pg-umlsd call"
+\begin{call} {${1:from}} {${2:function}} {${3:to}} {${4:return}}
+\end{call}
 endsnippet

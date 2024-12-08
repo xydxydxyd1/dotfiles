@@ -1,3 +1,7 @@
+global !p
+from snippet_lib import *
+endglobal
+
 snippet sign "My signature"
 Sincerely,
 Yundi Xu
@@ -6,4 +10,8 @@ endsnippet
 snippet { "close braces" i
 {${0:${VISUAL}}
 }
+endsnippet
+
+snippet tagify "format for tagging" i
+`!p snip.rv = tagify(snip.v.text)`
 endsnippet
