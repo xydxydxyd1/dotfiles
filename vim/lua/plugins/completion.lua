@@ -54,16 +54,13 @@ end
 return {
     {
         "SirVer/ultisnips",
+        dependencies = {
+            "honza/vim-snippets",
+        },
         init = function()
             vim.g.UltiSnipsExpandOrJumpTrigger = "<tab>"
-        end
-    },
-    {
-        "honza/vim-snippets",
-        init = function()
-            -- Not in official docs, for snippet "TODO"
             vim.g.snips_author = "Eric Xu"
-        end,
+        end
     },
     {
         "hrsh7th/nvim-cmp",
