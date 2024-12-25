@@ -10,8 +10,11 @@ else
     mv "$HOME/dotfiles" "$DF_DIR"
 fi
 
-if [[ -z $XDG_CONFIG_HOME ]]; then
+if [[ -z "$XDG_CONFIG_HOME" ]]; then
     XDG_CONFIG_HOME="$HOME/.config"
+fi
+if [[ ! -e "$XDG_CONFIG_HOME" ]]; then
+    mkdir -p "$XDG_CONFIG_HOME"
 fi
 
 # Link to home
@@ -37,4 +40,9 @@ fi
 read -r -p 'Setup tex styles?' yn
 if [[ "$yn" == 'y' ]]; then
     source "$DF_DIR/tex/setup.sh"
+fi
+
+read -r -p 'Setup empty config.local for neovim?' yn
+if [[ "$yn" == 'y' ]]; then
+    cp ./vim/lua/config/example_local.lua ./vim/lua/config/local.lua
 fi
