@@ -119,6 +119,10 @@ snippet pckg "usepackage"
 \usepackage{$1}
 endsnippet
 
+snippet emp "emphasize"
+\emph{${1:${VISUAL}}}
+endsnippet
+
 snippet boxedc "compact tcolorbox environment"
 \begin{tcbcompact}{$1}
     ${2:${VISUAL}}
@@ -376,4 +380,8 @@ endsnippet
 snippet call "pg-umlsd call"
 \begin{call} {${1:from}} {${2:function}} {${3:to}} {${4:return}}
 \end{call}
+endsnippet
+
+snippet si "standard units" i
+\SI{$1}{\\$2}
 endsnippet
