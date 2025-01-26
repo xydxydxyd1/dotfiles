@@ -16,8 +16,22 @@ cdgit()
 	cd "$(git rev-parse --show-toplevel)" || return
 }
 
+mktmux()
+{
+    cd "$mk/$1"
+    tmux new -s "$1"
+}
+
+# Developer
+
 pipfreeze()
 {
     pip install $1
     pip freeze | grep $1 >> requirements.txt
+}
+gocover()
+{
+    go test -coverprofile=temp.cov
+    go tool cover -html=temp.cov
+    rm temp.cov
 }
