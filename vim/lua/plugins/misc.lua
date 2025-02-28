@@ -6,6 +6,7 @@ return {
         init = function()
             vim.keymap.set("n", "<C-n>", ":GFiles<CR>", {noremap = true})
             vim.keymap.set("n", "<C-m>", ":Buffer<CR>", {noremap = true})
+            vim.keymap.set("n", "<C-l>", ":Files<CR>", {noremap = true})
         end
     },
     { "bullets-vim/bullets.vim" },
