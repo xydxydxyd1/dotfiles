@@ -5,6 +5,8 @@ echo "Loading bash configurations..."
 
 shopt -s extglob		# regex glob
 
+eval "$(direnv hook bash)"
+
 test -f $rc_dir/git-completion.bash && . $_
 export PS1="\[\e[32m\]\u\[\e[m\]@\[\e[36m\]\h\[\e[m\]:\W\[\e[33m\]\$(__git_ps1 \"(%s)\")\[\e[m\]$ "	# customized username section
 HISTSIZE=1000

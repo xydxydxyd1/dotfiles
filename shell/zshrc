@@ -56,6 +56,7 @@ cursor_mode() {
 
 cursor_mode
 
+eval "$(direnv hook zsh)"
 
 # FZF integration
 # Set up fzf key bindings and fuzzy completion
