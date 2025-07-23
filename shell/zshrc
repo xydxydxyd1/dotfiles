@@ -9,7 +9,7 @@ path+=(~/scripts/zsh)
 export PATH
 
 setopt PROMPT_SUBST
-export PS1='%F{green}%n%f@%F{cyan}%m%f:%2~%F{yellow}$(__git_ps1 " (%s)")%f$ '
+export PS1='%F{green}%n%f@%F{cyan}%m%f:%2~%F{yellow}$(command -v __git_ps1 >/dev/null && __git_ps1 " (%s)")%f$ '
 
 # Completion
 zstyle ':completion:*' completer _complete
@@ -74,4 +74,5 @@ HISTFILE=~/.zsh_history
 if [[ -f $rc_dir/extraconf.zsh ]]; then
     source "$rc_dir/extraconf.zsh";
 fi
+
 
