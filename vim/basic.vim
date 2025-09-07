@@ -5,6 +5,10 @@ set encoding=utf-8	" Required for vimtex and youcompleteme
 filetype on
 filetype plugin on
 filetype indent on
+au BufNewFile,BufRead PKGBUILD set filetype=sh
+
+" Highlight trailing spaces
+set list listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 
 set mouse=a	" cursor goes where mouse clicks
 
