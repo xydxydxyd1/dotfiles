@@ -6,6 +6,7 @@ filetype on
 filetype plugin on
 filetype indent on
 au BufNewFile,BufRead PKGBUILD set filetype=sh
+au BufNewFile,BufRead .envrc set filetype=sh
 
 " Highlight trailing spaces
 set list listchars=tab:\ \ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨
