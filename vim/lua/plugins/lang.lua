@@ -24,10 +24,12 @@ return {
                     set_keymap("textDocument/definition", "gd", vim.lsp.buf.definition)
                     set_keymap("textDocument/formatting", "<Leader>f", vim.lsp.buf.format)
                     set_keymap("textDocument/hover", "<Leader>d", vim.lsp.buf.hover)
-                    set_keymap("textDocument/hover", "<Leader>rf", vim.lsp.buf.references)
                     -- clangd didn't work well
                     --set_keymap("textDocument/diagnostic", "<Leader>a", vim.diagnostic.open_float)
                     vim.keymap.set("n", "<Leader>h", vim.diagnostic.open_float, {noremap=true})
+                    vim.keymap.set("n", "<Leader>rf", vim.lsp.buf.references, {noremap=true})
+                    vim.keymap.set("n", "<Leader>n", vim.diagnostic.goto_next, {noremap=true})
+                    vim.keymap.set("n", "<Leader>N", vim.diagnostic.goto_prev, {noremap=true})
                 end,
             })
         end
