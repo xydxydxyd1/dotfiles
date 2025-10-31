@@ -6,10 +6,7 @@ return {
         init = function()
             installed_lsps = require("config.local").installed_lsps
             for _, lsp in ipairs(installed_lsps) do
-                --vim.api.nvim_echo({{"Loading " .. lsp, "Normal"}}, false, {})
-                args = require("config.lang")[lsp]
-                if args == nil then args = {} end
-                require("lspconfig")[lsp].setup(args)
+                vim.lsp.enable(lsp)
             end
             vim.api.nvim_create_autocmd('LspAttach', {
                 callback = function(args)
