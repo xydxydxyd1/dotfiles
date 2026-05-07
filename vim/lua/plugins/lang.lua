@@ -13,7 +13,7 @@ return {
                     local client = vim.lsp.get_client_by_id(args.data.client_id)
                     function set_keymap(method, lhs, rhs)
                         opts={noremap=true}
-                        if client.supports_method(method) then
+                        if client:supports_method(method) then
                             vim.keymap.set("n", lhs, rhs, opts)
                         end
                     end
