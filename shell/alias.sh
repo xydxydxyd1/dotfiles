@@ -4,6 +4,7 @@ alias ll='ls -l'	# List directories, but loooong
 alias la='ls -a'	# List directories, but also the ~~secrets~~
 alias lla='ls -la'	# List directories, but loooong
 alias rm='rm -i'	# Always emable removal confirmation prompts
+alias cp='cp -i'	# Always emable override confirmation prompts
 
 # Rename
 alias python='python3'
