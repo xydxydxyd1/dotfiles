@@ -1,7 +1,5 @@
 #!/bin/bash
 
-./clean.sh
-
 export DF_DIR="$HOME/.dotfiles"
 if [[ -e $DF_DIR ]]; then
     echo "$DF_DIR already exists. Repo not moved."
