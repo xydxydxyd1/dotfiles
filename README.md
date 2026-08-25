@@ -17,3 +17,4 @@ So I can setup my stuff with a couple commands
 - Run [clean.sh](clean.sh) to reset
     - removes all symlinks
     - removes all vim plugins
+
