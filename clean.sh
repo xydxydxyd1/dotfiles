@@ -6,7 +6,7 @@ if [[ "$yn" != 'y' ]]; then
     exit 0
 fi
 
-rm -rf "$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.profile" "$HOME/.condarc"
+rm -rf "$HOME/.condarc"
 rm -rf "$HOME/.editorconfig" "$HOME/.tmux.conf"
 
 read -r -p 'Delete scripts? This includes extra scripts that may not be saved ' yn

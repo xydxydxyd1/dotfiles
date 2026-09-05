@@ -3,7 +3,7 @@
 export DF_DIR="$HOME/.dotfiles"
 if [[ -e $DF_DIR ]]; then
     echo "$DF_DIR already exists. Repo not moved."
-    exit 1
+    #exit 1
 else
     mv "$HOME/dotfiles" "$DF_DIR"
 fi
@@ -16,8 +16,8 @@ if [[ ! -e "$XDG_CONFIG_HOME" ]]; then
 fi
 
 # Link to home
-ln -s "$DF_DIR/shell/bashrc" "$HOME/.bashrc"
-ln -s "$DF_DIR/shell/zshrc" "$HOME/.zshrc"
+echo "source $DF_DIR/shell/bashrc" >> "$HOME/.bashrc"
+echo "source $DF_DIR/shell/zshrc" >> "$HOME/.zshrc"
 ln -s "$DF_DIR/vim" "$HOME/.vim"
 ln -s "$DF_DIR/misc/editorconfig.ini" "$HOME/.editorconfig"
 ln -s "$DF_DIR/misc/condarc" "$HOME/.condarc"
