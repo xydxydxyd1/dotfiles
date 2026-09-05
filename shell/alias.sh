@@ -8,7 +8,6 @@ alias cp='cp -i'	# Always emable override confirmation prompts
 
 # Rename
 alias python='python3'
-alias open='xdg-open'
 
 # Git commands
 alias gs='git status'
